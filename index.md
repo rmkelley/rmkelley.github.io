@@ -2,6 +2,8 @@
 
 ## Opensource geospatial technologies for urban design
 
+[link] (https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-4-W14/93/2019/isprs-archives-XLII-4-W14-93-2019.pdf)
+
 Haynes, Coetzee, and Rautenbach make a case for the creation of an urban design toolbox to help planners without access to proprietary software or technical specialists. Their idea is an important one- Cities need design to function well, and lots of it. In their article they present only a subset of the many open source programs that are available to planners. Focusing on three distinct but related urban needs (Neighborhood improvements, identifying crime hotspots, and helping local retailers), they make a case for how their selected toolbox can meet the needs of urban designers and planners.
 
 ![image](http://futurecapetown.com/wp-content/uploads/2017/10/Spatial-Development.jpg)
