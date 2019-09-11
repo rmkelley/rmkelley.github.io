@@ -8,6 +8,6 @@ Prioritizing the localized gathering of information, data managment, and then it
   There is a focus on useability, accesability for non-tech savy users
 
 
-[Link](http://futurecapetown.com/wp-content/uploads/2017/10/Spatial-Development.jpg)
+![image](http://futurecapetown.com/wp-content/uploads/2017/10/Spatial-Development.jpg)
 
 
