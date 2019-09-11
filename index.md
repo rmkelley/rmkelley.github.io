@@ -2,35 +2,12 @@
 
 ## Opensource geospatial technologies for urban design
 
-
-Main purpose of article
-  Scenerios
-significant results/conclutions
-tech used
-1) Data collection: EpiCollect5, Arbiter, GeoODK and Field Papers
-2) Data storage and management: GeoServer, MapServer, GeoNetwork and GeoNode for data storage and management
-3) Data visualisation: MapWindow5 and QGIS does open source matter?
+Haynes, Coetzee, and Rautenbach make a case for the creation of an urban design toolbox to help planners without access to proprietary software or technical specialists. Their idea is an important one- Cities need design to function well, and lots of it. In their article they present only a subset of the many open source programs that are available to planners. Focusing on three distinct but related urban needs (Neighborhood improvments, identifying crime hotspots, and helping local retailers), they make a case for how their selected toolbox can meet the needs of urban designers and planners.
+  
+Prioritizing the localized gathering of information, data managment, and then its presentation, the authors write compellingly about why there is a technilogical need on this subject. That is where their case begins to struggle, however. Trying to do data collection, storage and management, and visualization across programs is a complicated task. That is made more complicated when users are not experienced with their software. That is the exact demographic the authors intend their toolbox for, however. They demonstrate a distinct need and reason to use open source software in their cases, but are not convincing in their case that these planners would be up to the task of using these tools offered without significant training.
+  There is a focus on useability, accesability for non-tech savy users
 
 
-### Markdown
+[Link](http://futurecapetown.com/wp-content/uploads/2017/10/Spatial-Development.jpg)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
 
