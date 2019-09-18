@@ -7,3 +7,5 @@ In their article _Supporting Urban Design with Open Source Geospatial Technologi
 Prioritizing the localized gathering of information, data management, and then its presentation, the authors write compellingly about why there is a technological need on this subject. That is where their case begins to struggle, however. Trying to do data collection, storage and management, and visualization across programs is a complicated task. That is made more complicated when users are not experienced with their software. That is the exact demographic the authors intend their toolbox for, however. They demonstrate a distinct need and reason to use open source software in their cases but are not convincing in their case that these planners would be up to the task of using these tools offered without significant training.
 
 Follow link to article: [link](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-4-W14/93/2019/isprs-archives-XLII-4-W14-93-2019.pdf)
+
+[First Blog Post](rmkelley.github.io/blogpost1)
