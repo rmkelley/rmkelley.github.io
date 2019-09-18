@@ -8,4 +8,4 @@ Prioritizing the localized gathering of information, data management, and then i
 
 Follow link to article: [link](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-4-W14/93/2019/isprs-archives-XLII-4-W14-93-2019.pdf)
 
-[First Blog Post](rmkelley.github.io/blogpost1.md)
+[First Blog Post](blogpost1.md)
