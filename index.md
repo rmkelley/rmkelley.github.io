@@ -4,4 +4,4 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 
 [First Blog Post](blogpost1.md)
 
-[QGIS Direction Model](DisDirModel.md)
+[QGIS Direction Model](qgisModel.md)
