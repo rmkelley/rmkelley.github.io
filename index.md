@@ -6,4 +6,3 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 
 [QGIS Direction Model](qgisModel.md)
 
-[2nd Version of Direction Model](lab_1_model.model3)
