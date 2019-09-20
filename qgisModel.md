@@ -1,5 +1,7 @@
 ## The first model from class
 
-In our first class we each made a model to determine the distance and direction of each polygon in a selected layer from a specified centroid or an average of specified features.
+For our first project we each made a model to determine the distance and direction of each polygon in a selected layer from a specified centroid or an average of specified features.
 
-[Click to Download my model](DisDirModel.model3)
+My model had an undiagnosed bug which requried the input be classified as a vector feature as opposed to a vector layer.
+
+[Click to Download my model](lab_1_finalmodel.model3)
