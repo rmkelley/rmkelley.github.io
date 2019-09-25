@@ -8,4 +8,4 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 
 [Polarplot](polar.html)
 
-[Scatterplot](Scatter2.html)
+[Scatterplot](Scat.html)
