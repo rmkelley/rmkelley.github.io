@@ -6,6 +6,4 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 
 [QGIS Direction Model](qgisModel.md)
 
-[Polarplot](polar.html)
-
-[Scatterplot](Scat.html)
+[SQL version of Model]()
