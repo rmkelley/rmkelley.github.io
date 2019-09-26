@@ -7,3 +7,5 @@ These are two plots taken from the model run on Massacusetts census tracts
 [Polarplot](polar.html)
 
 [Scatterplot](Scat.html)
+
+![Capture of the SQL Model in Edit Mode](model_sql.PNG)
