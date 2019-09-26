@@ -1,6 +1,8 @@
 ## First and Second Labs: QGIS Modelling
 
-Open source software has never been a more accessable and powerfull alternative to proprietary software. Statistical programs such as R have been mainstreamed and for spatial software, QGIS has an active and growing community of developers and users.
+Open source software has never been a more accessable and powerfull alternative to proprietary software. Statistical programs such as R have been mainstreamed and for spatial software, QGIS has an active and growing community of developers and users. There are user and development conferences such as FOSS4G, and robust online communities. The value of open source software such as QGIS comes from its technical flexibility, economic accessability, and the philisophical ramifications.
+
+The work below is a model intended to both showcase the uses of a simple spatial model in QGIS and how some simple SQL code can be used as alternatives to a point-and-click approach within the user interface.
 
 This is a version of my model that uses some SQL code.
 
