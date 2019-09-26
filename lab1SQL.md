@@ -1,3 +1,7 @@
+## First and Second Labs: QGIS Modelling
+
+Open source software has never been a more accessable and powerfull alternative to proprietary software. Statistical programs such as R have been mainstreamed and for spatial software, QGIS has an active and growing community of developers and users.
+
 This is a version of my model that uses some SQL code.
 
 [SQL model version](SQL_Az_Model.model3)
