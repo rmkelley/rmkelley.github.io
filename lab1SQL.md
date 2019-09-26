@@ -4,6 +4,10 @@ Open source software has never been a more accessable and powerfull alternative 
 
 The work below is a model intended to both showcase the uses of a simple spatial model in QGIS and how some simple SQL code can be used as alternatives to a point-and-click approach within the user interface.
 
+![Capture of the SQL Model in Edit Mode](model_sql.PNG)
+
+![Capture of the Center Point Model](MASScent.PNG)
+
 This is a version of my model that uses some SQL code.
 
 [SQL model version](SQL_Az_Model.model3)
@@ -12,18 +16,29 @@ Here is a link to the page containing the non-SQL version of the model
 
 [First model](qgisModel.md)
 
+This is a map of the distance of any given cencus tract from Boston with a graduated data representation. This legend (and all subsequent ones) were excluded due to the technical challenge of including them.
 ![Mass Distance](MASSdistance.PNG)
-![Mass Direction](MASSdirection.PNG)
-![Mass Median Gross Rents](MASSrent.PNG)
-![Mass Latinx Population](MASSlatinx.PNG)
-These are two plots taken from the model run on Massacusetts census tracts
 
+This map shows the direction of each census tract from the centroid of Boston.
+![Mass Direction](MASSdirection.PNG)
+
+The following two maps are result of census data joined to the Mass shapefile.
+
+This is the median gross rent of all census tracts within Mass.
+![Mass Median Gross Rents](MASSrent.PNG)
+
+This map is the total latinx population in each county.
+![Mass Latinx Population](MASSlatinx.PNG)
+
+A comparison between the two shows that while housing prices are higher in many urban areas, parts of the Cape, the Berkshires, and the North Shore, Latinx populations are strongly tied to urban areas.
+
+The following two links lead to plots taken from the main model.
+
+Rent by direction
 [Polarplot](polar.html)
 
+Latinx population by distance
 [Scatterplot](Scat.html)
 
-![Capture of the SQL Model in Edit Mode](model_sql.PNG)
-
-![Capture of the Center Point Model](MASScent.PNG)
 
 Here is a [link](index.md) back to the home page
