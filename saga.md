@@ -19,7 +19,7 @@ Flow Accumulation
 ![05](05flow_accumulation.png)![](05flow_accumulation_legend)
 
 Channel Network of Points
-![6](06channel_network.png)![](06channel_network_legend)
+![6](06channel_network.png)![](06channel_network_legend.png)
 
 Channel Description of Points
-![07](07channel_description.png)![](07channel_description_legend)
+![07](07channel_description.png)![](07channel_description_legend.png)
