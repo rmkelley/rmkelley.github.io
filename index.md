@@ -4,6 +4,6 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 
 [First Blog Post](blogpost1.md)
 
-[QGIS Direction Model](qgisModel.md)
+[QGIS Direction Model](lab1SQL.md)
 
-[SQL version of Model](lab1SQL.md)
+[Mnt Kilimanjaro Global DEM Lab](saga.md)
