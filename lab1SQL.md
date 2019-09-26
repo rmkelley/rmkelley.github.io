@@ -18,6 +18,6 @@ These are two plots taken from the model run on Massacusetts census tracts
 
 ![Capture of the SQL Model in Edit Mode](model_sql.PNG)
 
-![Capture of the Center Point Model] (MASScent.PNG)
+![Capture of the Center Point Model](MASScent.PNG)
 
 Here is a [link](index.md) back to the home page
