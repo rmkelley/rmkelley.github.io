@@ -23,3 +23,6 @@ Channel Network of Points
 
 Channel Description of Points
 ![07](07channel_description.png)![](07channel_description_legend.png)
+
+
+Here is a [link](index.md) back to the home page
