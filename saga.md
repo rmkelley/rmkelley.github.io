@@ -8,3 +8,18 @@ Mosaiced UTM Projection
 
 Hillshade
 ![02](02hillshade.png)![](02hillshade_legend.png)
+
+Sink Route
+![03](03sinkroute.png)![](03sinkroute_legend.png)
+
+Sinks Removed
+![04](04mosaic_no_sinks.png)![](04mosaic_no_sinks_legend.png)
+
+Flow Accumulation
+![05](05flow_accumulation.png)![](05flow_accumulation_legend)
+
+Channel Network of Points
+![6](06channel_network.png)![](06channel_network_legend)
+
+Channel Description of Points
+![07](07channel_description.png)![](07channel_description_legend)
