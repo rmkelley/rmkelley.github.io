@@ -2,6 +2,8 @@
 
 Open source software has never been a more accessable and powerfull alternative to proprietary software. Statistical programs such as R have been mainstreamed and for spatial software, QGIS has an active and growing community of developers and users. There are user and development conferences such as FOSS4G, and robust online communities. The value of open source software such as QGIS comes from its technical flexibility, economic accessability, and the philisophical ramifications.
 
+Open source software has opened up new fronts in the debate between GIS as a science and as a tool. The increased freedom associated with open source forms of software development allow for more testing, experimentation, and academic discourse. The transition from free beer to free speach (Rey 2009) to free as in "libre" has deepened the philisophical discutions around what the limits of open source software actually are. When practically anyone can be a producer, consumer, and critic of the medium then defining such boundaries is difficult to do.
+
 The work below is a model intended to both showcase the uses of a simple spatial model in QGIS and how some simple SQL code can be used as alternatives to a point-and-click approach within the user interface.
 
 ![Capture of the SQL Model in Edit Mode](model_sql.PNG)
