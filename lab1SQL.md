@@ -45,5 +45,6 @@ Rent by direction
 Latinx population by distance
 [Scatterplot](Scat.html)
 
+A note on the relevance of the model to entities larger than cities: While Massachusetts is certainly not a densely packed urban core, it is a small and highly urbanized state. Using the model on it showed interesting relationships between different sized urban areas, allowed for a look into how urban areas and their suburbs relate over rent and Latinx population, and more. Also, Ben Dohan was already doing Boston and I wanted to do something unique.
 
 Here is a [link](index.md) back to the home page
