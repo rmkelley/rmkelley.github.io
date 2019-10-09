@@ -18,7 +18,7 @@ SRTM Elevation and Data Sources
 
 ![Batch Process Example](batch_example.PNG)
 
-![SRTM Elevation dIFFERENCE](Elevation_difference.png)
+![Elevation Difference](Elevation_difference.jpg)
 ![](Elevation_difference_legend.png)
 
 Flow Accumulation initial image
