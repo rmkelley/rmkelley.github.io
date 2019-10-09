@@ -24,7 +24,7 @@ SRTM Elevation and Data Sources
 
 Batch Process Download
 
-[Batch File] (mosaic_utmproj.bat)
+[Batch File](mosaic_utmproj.bat)
 
 Bath Process Screen Capture
 
