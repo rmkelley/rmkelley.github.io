@@ -1,5 +1,9 @@
 ## Lab 3 continued: Batch Processing Flow Accumulation Models
 
+This section took the processes learned in lab three and converted them into batch processes. 
+
+For the region as a whole, the SRTM data provides a mask for waterfeatures while ASTER does not.
+
 ASTER Elevation and Data Sources
 
 ![ASTER Elevation](ASTER_EL_UTM.png)
@@ -39,7 +43,7 @@ Flow Accumulation Difference with Contrast
 ![Aster Hillshade](ASTER_hillshade.png)
 ![](ASTER_hillshade_legend.png)
 
-![SRTM 3D](SRTM_3D.PNG)
+![ASTER 3D](ASTER_3D.PNG)
 
 ![ASTER 3D](SRTM_3D.PNG)
 
