@@ -4,7 +4,7 @@ This section took the processes learned in lab three and converted them into bat
 
 We used SAGA version 6.2, inputting data from ASTER and SRTM. The ASTER data is Model V003, 2019, while the SRTM data is from NASA's Shuttle Radar Teopography Mission Global 1 arc second data set.
 
-For the region as a whole, the SRTM data provides a mask for waterfeatures while ASTER does not. Furthermore, the channel networks rendered more completely for the SRTM data than the ASTER data and also appear to more closely fit where streams would be on an elevation model and Google imagery via an eye-check.
+For the region as a whole, the SRTM data provides a mask for waterfeatures while ASTER does not. Furthermore, the channel networks rendered more completely for the SRTM data than the ASTER data and also appear to more closely fit where streams would be on an elevation model and Google imagery via an eye-check. Additionally, the ASTER Number file has large sections that are drawn from the SRTM data.
 
 ASTER Elevation and Data Sources
 
