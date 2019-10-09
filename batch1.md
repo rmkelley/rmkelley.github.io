@@ -43,6 +43,14 @@ Flow Accumulation Difference with Contrast
 
 ![ASTER 3D](SRTM_3D.PNG)
 
+Google Satelite Basemap
+
+![Side by side basemaps](comp_background.PNG)
+
+![Error 1](comp_background.PNG)
+
+![Steep](oops_steep.PNG)
+
 [Click here to go to Hydrology; Lab 3](saga.md)
 
 [Click here to go to the main page](index.md)
