@@ -22,7 +22,11 @@ SRTM Elevation and Data Sources
 ![SRTM Data Sources](STRM_NUM_UTM.png)
 ![](STRM_NUM_UTM_legend.png)
 
-Bath Process Example
+Batch Process Download
+
+![Batch File] (mosaic_utmproj.bat)
+
+Bath Process Screen Capture
 
 ![Batch Process Example](batch_example.PNG)
 
