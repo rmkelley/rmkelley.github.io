@@ -5,7 +5,7 @@
 ![](ASTER_EL_UTM_legend.png)
 
 ![ASTER Data Sources](ASTER_NUM_UTM.png)
-![](ASTER_NUM_UTM.png_legend)
+![](ASTER_NUM_UTM_legend.png)
 
 !(SRTM Elevation](STRM_EL_UTM.png)
 ![](STRM_EL_UTM_legend.png)
