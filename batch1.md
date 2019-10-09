@@ -4,7 +4,7 @@ This section took the processes learned in lab three and converted them into bat
 
 We used SAGA version 6.2, inputting data from ASTER and SRTM. The ASTER data is Model V003, 2019, while the SRTM data is from NASA's Shuttle Radar Teopography Mission Global 1 arc second data set.
 
-For the region as a whole, the SRTM data provides a mask for waterfeatures while ASTER does not. Furthermore, the channel networks rendered more completely for the SRTM data than the ASTER data and also appear to more closely fit where streams would be on an elevation model and Google imagery via an eye-check. Additionally, the ASTER Number file has large sections that are drawn from the SRTM data.
+For the region as a whole, the SRTM data provides a mask for waterfeatures while ASTER does not. Furthermore, the channel networks rendered more completely for the SRTM data, ie without gaps, than the ASTER data and also appear to more closely fit where streams would be on an elevation model and Google imagery via an eye-check. Additionally, the ASTER Number file has large sections that are drawn from the SRTM data around the summit, and the SRTM data is more complete in that area and generally across the imagery.
 
 ASTER Elevation and Data Sources
 
@@ -33,6 +33,8 @@ Bath Process Screen Capture
 The batch process is a collection of commands written out in the computer's command window. Instead of needing to go through the UI of SAGA or GQIS, batch processing runs those programs for you directly. Each tool I used to model the hydrology was found [here](http://www.saga-gis.org/saga_tool_doc/6.4.0/a2z.html). Most of my settings remained on default, but later on in the processes some changed. Running the processes one time took roughly twenty minutes, but it was possible to run different batches on several computers to preserve time.
 
 Difference in Elevation
+
+The data is ASTER elevation data subtracted from SRTM elevation data, with orange veering towards ASTER data and blue towards SRTM. Notice there is a diagonal strip running across the frame. I shows how a single pass of an imager can dramatically change data outputs.
 
 ![Elevation Difference](Elevation_difference.jpg)
 ![](Elevation_difference_legend.png)
@@ -83,19 +85,19 @@ While there were errors with this in QGIS, Ben Dohan and Koufre found a good wor
 
 ![Side by side basemaps](comp_background.PNG)
 
-One issue is that at higher elevations, the channel networks never seem to leave the ridges of the mountain. This is most likely a result of using a top-down flow accumulation processs, where the starting point was not able to sample widely enough to break out of issues like that. In this case, it would be important to sample from the bottom-upwards as well, and then average the two to minimize this error.
+One visual issue is that at higher elevations, the channel networks never seem to leave the ridges of the mountain. However, this is the result of shadows and the angle of photography. In reality the streams really are in the valleys. The flows are not perfect, however, and one method of minimizing error would be to do flow accumulation from the bottom up and then merge the results.
 
 SRTM Error1
 
 ![Error 1](SRTM_base_zoom1.PNG)
 
-Here, there are examples of the flows mainly following what one would expect from the imagery, but every so often they jump their tracks and go off in an unexpected direction. This seems most likely to be the result of my unit size and sampling method, either having units too broad or too specific to notice the smallest details- or to over react to them. My guess is the former.
+Here, there are examples of the flows mainly following what one would expect from the imagery, but every so often they jump their tracks and go off in an unexpected direction. This seems most likely to be the result of my unit size and sampling method, either having units too broad or too specific to notice the smallest details- or to over react to them. My assumption is the former because of our discussions in class and because having a 30 meter cell size is very large to try and encapsulate most streams.
 
 SRTM Error2
 
 ![Steep](oops_steep.PNG)
 
-These are examples of where there is what seems like a steep section of the mountain but little differences in terrain to guide it. One likely explanation is that the flow accululation is based on higher levels of snow and ice at the summit, which is not present in the arial photography. That exposes an underlying issue with these data sets which we have discussed in class. Because space very often can change over time, having a data set that does not match up squarely with the time frame of other parts of your analysis can create some disjointedness.
+These are examples of where there is what seems like a steep section of the mountain but little differences in terrain to guide it. One likely explanation is that the flow accululation is based on higher levels of snow and ice at the summit along with higher reflectivity, which is not present in the arial photography. That exposes an underlying issue with these data sets which we have discussed in class. Because space very often can change over time, having a data set that does not match up squarely with the time frame of other parts of your analysis can create some disjointedness. The ground coverage towards the summit also changes to be more earth and less vegitation, potentially creating more errors for the photography. 
 
 [Click here to go to Hydrology; Lab 3](saga.md)
 
