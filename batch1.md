@@ -33,6 +33,7 @@ Flow Accumulation Difference with Contrast
 
 ![Flow Accumulation Closeup](dif_closeup.PNG)
 
+![SRTM Hillshade](SRTM_hillshade.jpg)
 ![](SRTM_hillshade_legend.png)
 
 ![Aster Hillshade](ASTER_hillshade.png)
