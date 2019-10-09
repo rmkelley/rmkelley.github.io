@@ -1,7 +1,7 @@
 ## Lab 3 continued: Batch Processing Flow Accumulation Models
 
 
-![batch_example.PNG](Batch Process Example)
+![Batch Process Example](batch_example.PNG)
 
 [Click here to go to Hydrology; Lab 3](saga.md)
 
