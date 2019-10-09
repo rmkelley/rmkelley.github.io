@@ -47,7 +47,7 @@ Google Satelite Basemap
 
 ![Side by side basemaps](comp_background.PNG)
 
-![Error 1](STRM_base_zoom1.PNG)
+![Error 1](SRTM_base_zoom1.PNG)
 
 ![Steep](oops_steep.PNG)
 
