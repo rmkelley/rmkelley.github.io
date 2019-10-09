@@ -45,5 +45,6 @@ In the final result, this was replaced by a channel network of lines.
 ## Channel Description of Points
 ![07](07channel_description.png)![](07channel_description_legend.png)
 
+Here is a [link](batch1.md) to the batch procresses section of this work
 
-Here is a [link](index.md) back to the home page
+Here is a [link](index.md) to the home page
