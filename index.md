@@ -7,3 +7,5 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 [QGIS Direction Model](lab1SQL.md)
 
 [Mnt Kilimanjaro Global DEM Lab](saga.md)
+
+[Batch Processing of Mnt Kilimanjaro](batch1.md)
