@@ -9,3 +9,5 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 [Mnt Kilimanjaro Global DEM Lab](saga.md)
 
 [Batch Processing of Mnt Kilimanjaro](batch1.md)
+
+[Leaflet map of road access to hospitals in Dar es Salaam](dsmmap/index.html)
