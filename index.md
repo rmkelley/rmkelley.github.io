@@ -10,4 +10,4 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 
 [Batch Processing of Mnt Kilimanjaro](batch1.md)
 
-[Leaflet map of road access to hospitals in Dar es Salaam](dsmap/index.html)
+[Learn about resiliancy in Dar es Salaam](daressalaan.md)
