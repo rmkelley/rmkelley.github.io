@@ -1,5 +1,6 @@
 This is an overview of the follwoing academic article.
 You Are What You Tweet: Connecting the Geographic Variation in America’s Obesity Rate to Twitter Conten
+
 By Ross Joseph Gore, Saikou Diallo, and Jose Padilla
 
 ## The purpose of the study was to determine "the relationship among the obesity rate of urban areas and expressions of happiness, diet and physical activity on social media." 
@@ -40,6 +41,12 @@ While the website claimed that "All relevant data are within the manuscript and 
 ## Physical Activity Data
 
 When "least one physical activity in the guidelines for exercise testing published by the American College of Sports Medicine (ACSM) and the Center for Disease Control and Prevention (CDC)," the tweet was deemed a physical activity tweet.
+
+## Analysis
+
+Their analysis consisted of aggregating tweets by msa, and then creating dot plots with lines of best fit. While simple, this does exactly what they wanted-determines correlative relationships. The authors found that there is an inverse relationship between expressions of hapiness in tweets and obesity rates.
+
+The authors did not find a statistically significant relationship between teh nutrient densit of foods in tweets and the corresponding obesity rates. They expressed surprise at this, leading me to think that their research was not as inductive as they let on in their introduction.
 
 Follow link to article: [link](https://doi.org/10.1371/journal.pone.0133505)
 
