@@ -11,3 +11,5 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 [Batch Processing of Mnt Kilimanjaro](batch1.md)
 
 [Learn about resiliancy in Dar es Salaam](daressalaan.md)
+
+[Twitter Article Overview](twitterart.md)
