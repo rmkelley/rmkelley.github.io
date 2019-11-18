@@ -13,3 +13,5 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 [Learn about resiliancy in Dar es Salaam](daressalaan.md)
 
 [Twitter Article Overview](twitterart.md)
+
+[Malawi vulnerability assessment](malawi.md)
