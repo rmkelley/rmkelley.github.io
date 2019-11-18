@@ -1,4 +1,4 @@
-This is an overview of the following academic article.
+This is an overview of the following academic article published in 2015.
 You Are What You Tweet: Connecting the Geographic Variation in America’s Obesity Rate to Twitter Content
 
 By Ross Joseph Gore, Saikou Diallo, and Jose Padilla
