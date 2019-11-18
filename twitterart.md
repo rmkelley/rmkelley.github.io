@@ -48,6 +48,8 @@ Their analysis consisted of aggregating tweets by msa, and then creating dot plo
 
 The authors did not find a statistically significant relationship between teh nutrient densit of foods in tweets and the corresponding obesity rates. They expressed surprise at this, leading me to think that their research was not as inductive as they let on in their introduction.
 
+()![journal.pone.0133505.t001.PNG]
+
 Follow link to article: [link](https://doi.org/10.1371/journal.pone.0133505)
 
 [Back to main page](index.md)
