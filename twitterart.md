@@ -48,7 +48,7 @@ Their analysis consisted of aggregating tweets by msa, and then creating dot plo
 
 The authors did not find a statistically significant relationship between the nutrient density of foods in tweets and the corresponding obesity rates. They expressed surprise at this, leading me to think that their research was not as inductive as they let on in their introduction.
 
-!()[journal.pone.0133505.t001.PNG]
+![00](journal.pone.0133505.t001.PNG)
 
 These were some of the most commonly appearing positive and negative foods in tweets. They did find, however, that tweets discussing food are more inclined to have a negative relationship with obesity.
 
