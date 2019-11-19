@@ -8,6 +8,9 @@ To access the final product, follow the link below.
 To dowmload our SQL code to understand our exact queries, click on the link below.
 [sql code](DeScode.sql)
 
+Click the link below to return to my homepage.
+[Main Page](index.md)
+
 General notes to anyone attempting analysis with large amounts of features.
 
 -Make sure that your dataformats fit whatever you are trying to do to them. For example, we had a situation where we wanted to determine the width of the streets, but the column was a string. We had to remove text, remove nulls, and only then could we convert it into float. The CAST function is useful for converting data types. We used CAST to take string data in one column and then CAST it into the float type in another column that we made.
