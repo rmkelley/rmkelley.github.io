@@ -1,9 +1,12 @@
 ## Dar es Salaam
 
-The purpose of this lab was to use skills in SQL and database management to run vulnurability analyses on open street map data of Dar es Salaam. Inspired by Resiliance Acadamy, a local educational data-based organization, our work focused on writing scripts and using data that could be accessable to anyone, anywhere. The same goes for our results, which we made into an online leaflet map.
+The purpose of this lab was to use skills in SQL and database management to run vulnurability analyses on open street map data of Dar es Salaam. Working with Ben Dohan and inspired by Resiliance Acadamy (a local educational data-based organization), our work focused on writing scripts and using data that could be accessable to anyone, anywhere. The same goes for our results, which we made into an online leaflet map.
 
 To access the final product, follow the link below.
 [Leaflet map of road access to hospitals in Dar es Salaam](dsmap/index.html)
+
+To dowmload our SQL code to understand our exact queries, click on the link below.
+[sql code](DeScode.sql)
 
 General notes to anyone attempting analysis with large amounts of features.
 
