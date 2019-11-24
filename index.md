@@ -15,3 +15,5 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 [Twitter Article Overview](twitterart.md)
 
 [Malawi vulnerability assessment](malawi.md)
+
+[Final Independant Project](final.md)
