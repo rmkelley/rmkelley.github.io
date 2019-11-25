@@ -2,6 +2,6 @@
 ![2004 Vulnurability](MalcombRes.PNG) 	
 ![Climate Change Vul](MalcombCC.PNG)
 
-![Fine Res](Finepic2.png)
+![Fine Res](Finepic3.png)
 
-![Coarse Res](Coarsepic2.png)
+![Coarse Res](Coarsepic3.png)
