@@ -1,5 +1,7 @@
+# Final Project
+
 Here is a [link](index.md) back to the home page
 
-Prepare 1-2 paragraphs describing your goals / framing the problem
-Identify relevant literature from the class for self-evaluating certainty & validity of the question
-The project should be similar in scope to one module of the class: self-teaching and applying a new technique to solve a problem, documenting the analysis in reproducible fashion, and interpreting results in the context of debates on open source GIS, GIS as a science, error & uncertainty, reproducibility, and ethics.
+### GIS, statistics, and R- cross platform replicability and transparency
+
+I am interested in exploring how to do many of the actions/topics covered this semester in R. This might include spatial analysis, database management, basic mapping, probability functions, and maybe more. In class we have already begun exploring how to add files to a database using R, but I am still interested in finding ways to push the limit of that knowledge. Related topics that we have covered in class include replicability (how switching software affects the possibility of reenacting work) and how to manage variability in data/representation. One of the greatest possible strengths of R is the capacity to write out the code for an entire problem and then run it, either in pieces or in its entirety. I am interested to see how much it would be reasonable to do in one workflow in R which draws on how we began to use SQL in our work.
