@@ -1,6 +1,10 @@
+![Flow](Flow.PNG)
+
 ![2010 Vulnurability](MalcombRes2010.PNG) 	
 ![2004 Vulnurability](MalcombRes.PNG) 	
 ![Climate Change Vul](MalcombCC.PNG)
+
+![model](model_vulnurability.PNG)
 
 ![Fine Res](Finepic3.png)
 
