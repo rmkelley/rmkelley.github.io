@@ -102,3 +102,7 @@ These are examples of where there is what seems like a steep section of the moun
 [Click here to go to Hydrology; Lab 3](saga.md)
 
 [Click here to go to the main page](index.md)
+
+Comments from Class 11/25
+
+The large body of water as well as artificially flattened rice patty fields create error in the flow accumulation. If there is a thick enough canopie over a river channel, satalite imagery will not pick up the riverbed. It might even be marked as a ridge as opposed to depression if the trees are localized over the river bed and there is nothing in the surrounding area. At higher elevations and steep mountainsides, there is a chance that the radar angle did not find the most steep crevaces. In the datasets, this lack of data was sometiems fixed with interpolation which covered over the very features I was attempting to find. SRTM uses radar, ASTER uses a combination of photographs- often not very many photographs. For the ASTER data at high elevation, there is often really thick cloud cover that prevents accurate photographs meaning that the elevation is recorded as higher than it actually is.
