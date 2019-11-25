@@ -16,4 +16,6 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 
 [Malawi vulnerability assessment](malawi.md)
 
+[Twitter Lab](twitter.md)
+
 [Final Independant Project](final.md)
