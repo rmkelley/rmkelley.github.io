@@ -12,10 +12,11 @@ The goal of this lab project was to replicate the work done by Malcomb et al. fo
 ![2004 Vulnurability](MalcombRes.PNG) 	
 ![Climate Change Vul](MalcombCC.PNG)
 
-![model](model_vulnurability.PNG)
 
 ![Fine Res](Finepic3.png)
 
 ![Coarse Res](Coarsepic3.png)
+
+![model](model_vulnurability.PNG)
 
 Click [here](index.md) to return to my main page
