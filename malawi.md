@@ -1,3 +1,10 @@
+# Repordicability in Geographic Research; an academic analysis
+
+of 
+
+## Vulnerability modeling for sub-Saharan Africa: An operationalized approach in Malawi
+### By Malcomb, Weaver, and Krakowka
+
 ![Flow](Flow.PNG)
 
 ![2010 Vulnurability](MalcombRes2010.PNG) 	
