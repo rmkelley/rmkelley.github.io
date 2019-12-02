@@ -7,9 +7,11 @@ The goal of this lab project was to replicate the work done by Malcomb et al. fo
 ![Flow](Flow.PNG)
 
 
-
-![2010 Vulnurability](MalcombRes2010.PNG) 	
 ![2004 Vulnurability](MalcombRes.PNG) 	
+![2010 Vulnurability](MalcombRes2010.PNG)
+
+These two maps of resiliancy are from 2004 and 2010 respectivly, but notice that there are different numbers of traditional authorities between the two maps.
+
 ![Climate Change Vul](MalcombCC.PNG)
 
 
