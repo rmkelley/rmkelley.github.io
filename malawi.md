@@ -14,7 +14,7 @@ These two maps of resiliancy are from 2004 and 2010 respectivly, but notice that
 
 ![Climate Change Vul](MalcombCC.PNG)
 
-We rated the DHS variables on a scale of 1-5, although in hindsight it seems that Malcomb et al. weighed indicators on a 0-5 scale but did a poor job of communicating exactly what they meant to be doing and where. Another important point was that these scales were used for each variable, regardless of the type of data contained-discrete or contiguous. In our lab we placed them by percentile because that made the most sense, using percent_rank() and ntile() in SQL code. These are other instances where our attempt to replicate the work of Malcomb et al. had to deviate.
+We rated the DHS variables on a scale of 1-5, although in hindsight it seems that Malcomb et al. weighed indicators on a 0-5 scale but did a poor job of communicating exactly what they meant to be doing and where- he said he broke down his data in quintiles, which contradicts his earlier statement. We chose to use quintiles. Another important point was that these scales were used for each variable, regardless of the type of data contained-discrete or contiguous. In our lab we placed them by percentile because that made the most sense, using percent_rank() and ntile() in SQL code. These are other instances where our attempt to replicate the work of Malcomb et al. had to deviate.
 
 ### Fine Resolution
 ![Fine Res](Finepic3.png)
