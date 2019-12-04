@@ -17,3 +17,12 @@ Social vulnerability indices A comparative assessment using uncertainty and sens
 Uncertainty Analysis for a Social Vulnerability Index
 
 The main thrust of what I am interested in doing is replicating some of the prcesses that we have done in a different software format.
+
+
+## Planning Stage
+
+Replicate the first lab in RStudio, and then make it into a shiny app that allows people to play with different data inputs. A stretch goal would be to allow for different geographies.
+
+The main next step that will make this lab challenging is to push ways to pull data directly from the census beaureau to allow for increased possibilities for users. What will make this challenging is fitting it inside a shiny app.
+
+The data is going to come from the US census beaureau. I am going to use the ACS 5-year data because the 2010 census is 9 years out of date at this point. The ACS data has been taken on a rolling basis, and the 5-year dataset uses the last 5 years to statistically describe geographic areas. Important fields will be total population and race populations. To get the geographic boundaries, I am planning to follow a similar workflow to the Sharpie Lab. The column name that I believe I will need for joins will be named id2, although I may have to change some names to make that work. The workflow itself is going to be the same as lab 1, except with the intent to open up the data inputs to the use and to put the result online.
