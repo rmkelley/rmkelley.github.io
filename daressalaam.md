@@ -56,8 +56,13 @@ pause
 
 :: I attempted to use a -E tag to customize the projection to UTM zone 36 south 
 
-### 1. Figure out what we were interested in, and then determine what data we needed. Can the question be simplified? In our case, road access to hospitals.
-### 2. We had to simplify and clean the data pulled from OSM. We made three datasets: hospitals, houses, and roads. Roads had to have a width and a road distinction in the "highway" column. Homes had to have the Amenity column be "residential" and hospital had to be hospital or doctor.
+### 1. Figure out what we were interested in, and then determine what data we needed. 
+
+Can the question be simplified? In our case, road access to hospitals.
+
+### 2. We had to simplify and clean the data pulled from OSM. 
+
+We made three datasets: hospitals, houses, and roads. Roads had to have a width and a road distinction in the "highway" column. Homes had to have the Amenity column be "residential" and hospital had to be hospital or doctor.
 
 ```sql
 update planet_osm_line set width = replace(width, 'O', '0');
@@ -85,7 +90,9 @@ OR highway = 'residential' Or highway=  'road'  OR highway = 'secondary' OR high
 OR  highway = 'steps' OR highway = 'tertiary' Or highway = 'tertiary_link' OR highway = 'track'; 
 ```
 
-### 3. Create a buffer around the roads to give area. They were originally lines with their width not represented. We tested multiple different buffers, adding 5 meters for most roads and 18 meters for the trunk roads to encapsulate the road width and the building setbacks.
+### 3. Create a buffer around the roads to give area. 
+
+The roads were originally lines with width not represented. We tested multiple different buffers, adding 5 meters for most roads and 18 meters for the trunk roads to encapsulate the road width and the building setbacks.
 
 ```sql
 CREATE TABLE buffer7 as
@@ -104,7 +111,9 @@ ALTER table home ADD COLUMN linkage float;
 update buffer7 set geom = link::geometry('polygon', 4326);
 ```
 
-### 4. Intersect the building layer with the buffer. How many houses are actually in proximity to the road? The buffer was our proxy for ease of access. If your residence is set too far back from a road, it is unlikely to have easy or official access. Especially for medical personnel in an informal settlement. 
+### 4. Intersect the building layer with the buffer. 
+
+How many houses are actually in proximity to the road? The buffer was our proxy for ease of access. If your residence is set too far back from a road, it is unlikely to have easy or official access. Especially for medical personnel in an informal settlement. 
 
 ```sql
 UPDATE home set linkage = distinction FROM buffer7 WHERE st_intersects(way, geom);
@@ -128,7 +137,9 @@ create table acc as
  group by subward;
 ```
 
-### 5. Once we determined intersection, we had to get that data into a subwards feature. We made a table that took data from homes and subwards, and then took the agglomerated data from that and added it into our subwards feature.
+### 5. Once we determined intersection, we had to get that data into a subwards feature. 
+
+We made a table that took data from homes and subwards, and then took the agglomerated data from that and added it into our subwards feature.
 
 ```sql
 update subwardra 
