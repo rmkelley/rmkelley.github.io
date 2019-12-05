@@ -4,6 +4,8 @@ Click [here](index.md) to return to my homepage.
 
 The purpose of this lab was to use skills in SQL and database management to run vulnerability analyses on open street map data of Dar es Salaam. World Bank investment in the area and the mapping efforts of [Ramani Huria](https://ramanihuria.org/about-us/) have led to Dar es Salaam being one of the most mapped areas on Open Streetmap. Working with Ben Dohan and inspired by the missions of [Resilience Academy](https://resilienceacademy.ac.tz/) and Ramani Huria, we wanted to explore using opensource software and data to make conduct meaningful analysis that remains replicable. Our work focused on writing scripts and using data that could be accessible to anyone, anywhere. The same goes for our results, which we made into an online leaflet map.
 
+The question that we chose to illustrate was the relationship between road access and housing accross the city. Road access is increadibly important for rapid transit which is in-turn an important part of emergancy services. In critical, a few extra minutes for an ambulance trip can be a tipping point (or a burnt down neighborhood, although fire services were not the focus of our work). Our research question involved determining road networks throughout Dar es Salaam, which is a proxy for emergecny vehicle access and connectivity. Why this is not a clear-cut and easily answerable question is because of how road
+
 To access the final product, follow the link below.
 [Leaflet map of road access to hospitals in Dar es Salaam](dsmap/index.html)
 
