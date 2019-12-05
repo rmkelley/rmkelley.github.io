@@ -22,7 +22,7 @@ We rated the DHS variables on a scale of 1-5, although in hindsight it seems tha
 ### Coarse Resolution
 ![Coarse Res](Coarsepic3.png)
 
-The drought and flood data came in different sized raster resolutions (0.04166666 vs 0.08333333 decimal degrees), meaning that one of the two datasets had to be converted to the other to allow for analysis. The article's resolution size matches more closely to the fine resolution cells, however, the the most accurate (as opposed to precise) of our two maps is the coarse resolition map because data can be aggregated, but not parced appart in this instance.
+The drought and flood data came in different sized raster resolutions (0.04166666 vs 0.08333333 decimal degrees for drought and flood respectivly), meaning that one of the two datasets had to be converted to the other to allow for analysis. The article's resolution size matches more closely to the fine resolution cells, however, the the most accurate (as opposed to precise) of our two maps is the coarse resolition map because data can be aggregated, but not parced appart in this instance.
 
 ![model](model_vulnurability.PNG)
 
