@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+           <style>
+		html, body, #map {
+            width: 100%;
+            height: 100%;
+			padding: 0;
+			margin: 0;
+        }
+        </style>
+		<title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/subwards_des_1.js"></script>
+        <script src="data/healthcare_locations_2.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:19, minZoom:6
+        })
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://rmkelley.github.io/" >rmkelley</a> &middot; <a href="https://bendohan.github.io/">bendohan</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+        }
+        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+        });
+        layer_OSMStandard_0;
+        map.addLayer(layer_OSMStandard_0);
+        function pop_subwards_des_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">fid</th>\
+                        <td>' + (feature.properties['fid'] !== null ? Autolinker.link(String(feature.properties['fid'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">subward</th>\
+                        <td>' + (feature.properties['subward'] !== null ? Autolinker.link(String(feature.properties['subward'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">pctaccess</th>\
+                        <td>' + (feature.properties['pctaccess'] !== null ? Autolinker.link(String(feature.properties['pctaccess'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">totalhomes</th>\
+                        <td>' + (feature.properties['totalhomes'] !== null ? Autolinker.link(String(feature.properties['totalhomes'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_subwards_des_1_0(feature) {
+            if (feature.properties['pctaccess'] >= 3.078078 && feature.properties['pctaccess'] <= 15.019067 ) {
+                return {
+                pane: 'pane_subwards_des_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,240,217,1.0)',
+            }
+            }
+            if (feature.properties['pctaccess'] >= 15.019067 && feature.properties['pctaccess'] <= 24.958949 ) {
+                return {
+                pane: 'pane_subwards_des_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,204,138,1.0)',
+            }
+            }
+            if (feature.properties['pctaccess'] >= 24.958949 && feature.properties['pctaccess'] <= 39.315449 ) {
+                return {
+                pane: 'pane_subwards_des_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,141,89,1.0)',
+            }
+            }
+            if (feature.properties['pctaccess'] >= 39.315449 && feature.properties['pctaccess'] <= 56.511057 ) {
+                return {
+                pane: 'pane_subwards_des_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(227,74,51,1.0)',
+            }
+            }
+            if (feature.properties['pctaccess'] >= 56.511057 && feature.properties['pctaccess'] <= 87.462324 ) {
+                return {
+                pane: 'pane_subwards_des_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(179,0,0,1.0)',
+            }
+            }
+        }
+        map.createPane('pane_subwards_des_1');
+        map.getPane('pane_subwards_des_1').style.zIndex = 401;
+        map.getPane('pane_subwards_des_1').style['mix-blend-mode'] = 'normal';
+        var layer_subwards_des_1 = new L.geoJson(json_subwards_des_1, {
+            attribution: '',
+            pane: 'pane_subwards_des_1',
+            onEachFeature: pop_subwards_des_1,
+            style: style_subwards_des_1_0,
+        });
+        bounds_group.addLayer(layer_subwards_des_1);
+        map.addLayer(layer_subwards_des_1);
+        function pop_healthcare_locations_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">amenity</th>\
+                        <td>' + (feature.properties['amenity'] !== null ? Autolinker.link(String(feature.properties['amenity'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_healthcare_locations_2_0() {
+            return {
+                pane: 'pane_healthcare_locations_2',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,240,75,1.0)',
+            }
+        }
+        map.createPane('pane_healthcare_locations_2');
+        map.getPane('pane_healthcare_locations_2').style.zIndex = 402;
+        map.getPane('pane_healthcare_locations_2').style['mix-blend-mode'] = 'normal';
+        var layer_healthcare_locations_2 = new L.geoJson(json_healthcare_locations_2, {
+            attribution: '',
+            pane: 'pane_healthcare_locations_2',
+            onEachFeature: pop_healthcare_locations_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_healthcare_locations_2_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_healthcare_locations_2);
+        map.addLayer(layer_healthcare_locations_2);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/healthcare_locations_2.png" /> healthcare_locations': layer_healthcare_locations_2,'subwards_des<br /><table><tr><td style="text-align: center;"><img src="legend/subwards_des_1_3150.png" /></td><td>3 - 15</td></tr><tr><td style="text-align: center;"><img src="legend/subwards_des_1_15251.png" /></td><td>15 - 25</td></tr><tr><td style="text-align: center;"><img src="legend/subwards_des_1_25392.png" /></td><td>25 - 39</td></tr><tr><td style="text-align: center;"><img src="legend/subwards_des_1_39573.png" /></td><td>39 - 57</td></tr><tr><td style="text-align: center;"><img src="legend/subwards_des_1_57864.png" /></td><td>57 - 86</td></tr></table>': layer_subwards_des_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        resetLabels([layer_subwardsdes_1]);
+        map.on("zoomend", function(){
+            resetLabels([layer_subwardsdes_1]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_subwardsdes_1]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_subwardsdes_1]);
+        });
+        </script>
+    </body>
+</html>
