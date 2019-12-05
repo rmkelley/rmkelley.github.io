@@ -22,6 +22,7 @@ General notes to anyone attempting analysis with large amounts of features.
 ### 1. Figure out what we were interested in, and then determine what data we needed. Can the question be simplified? In our case, road access to hospitals.
 ### 2. We had to simplify and clean the data pulled from OSM. We made three datasets: hospitals, houses, and roads. Roads had to have a width and a road distinction in the "highway" column. Homes had to have the Amenity column be "residential" and hospital had to be hospital or doctor.
 
+```sql
 update planet_osm_line set width = replace(width, 'O', '0');
 
 update planet_osm_line set width = trim(width, ' Mmetrs');
@@ -42,9 +43,11 @@ ALTER TABLE planet_osm_line ADD COLUMN distinction integer;
 UPDATE planet_osm_line SET distinction = 1 WHERE highway = 'trunk' or highway = 'trunk_link' or highway = 'primary' or highway = 'primary_link';
 
 UPDATE planet_osm_line SET distinction = 0 WHERE  highway = 'yes'  OR highway =  'unclassified' OR  highway  =  'bridleway' OR  highway = 'construction' OR  highway = 'cycleway' OR highway = 'footway' OR  highway = 'path' OR highway = 'pedestrian' OR highway = 'residential' Or highway=  'road'  OR highway = 'secondary' OR highway = 'secondary_link' OR  highway = 'service' OR  highway = 'steps' OR highway = 'tertiary' Or highway = 'tertiary_link' OR highway = 'track'; 
+```
 
 ### 3. Create a buffer around the roads to give area. They were originally lines with their width not represented. We tested multiple different buffers, adding 5 meters for most roads and 18 meters for the trunk roads to encapsulate the road width and the building setbacks.
 
+```sql
 CREATE TABLE buffer7 as
 SELECT nwidth, distinction
 
@@ -59,10 +62,11 @@ WHERE highway is not null;
 ALTER table home ADD COLUMN linkage float;
 
 update buffer7 set geom = link::geometry('polygon', 4326);
+```
 
 ### 4. Intersect the building layer with the buffer. How many houses are actually in proximity to the road? The buffer was our proxy for ease of access. If your residence is set too far back from a road, it is unlikely to have easy or official access. Especially for medical personel in an informal settlment. 
 
-
+```sql
 UPDATE home set linkage = distinction FROM buffer7 WHERE st_intersects(way, geom);
 
 ALTER table home ADD COLUMN subward integer;
@@ -82,9 +86,11 @@ create table acc as
  create table total as 
  select subward, count(access) as acY from home
  group by subward;
+```
 
 ### 5. Once we determined intersection, we had to get that data into a subwards feature. We made a table that took data from homes and subwards, and then took the agglomerated data from that and added it into our subwards feature.
 
+```sql
 update subwardra 
 set allhomes2 = acT FROM acc WHERE acc.subward = subwardra.fid;
 
@@ -101,3 +107,4 @@ set pctaccess = (sherlockhomes/allhomes *100);
 create table health as
 SELECT building, amenity, way FROM planet_osm_polygon
 where building = 'hospital' or amenity = 'hospital' or amenity = 'doctors' or building = 'doctors'
+```
