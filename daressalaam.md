@@ -68,9 +68,9 @@ We made three datasets: hospitals, houses, and roads. Roads had to have a width 
 
 ```sql
 update planet_osm_line set width = replace(width, 'O', '0');
-
+--This replaces incorrectly entered text with a 0.--
 update planet_osm_line set width = trim(width, ' Mmetrs');
-
+--This trims everyhing in the column width after any part of 'Mmetrs' appears.
 ALTER TABLE planet_osm_line ADD COLUMN nwidth float;
 
 UPDATE planet_osm_line SET nwidth = CAST(width AS float) WHERE highway IS NOT NULL;
@@ -161,3 +161,6 @@ create table health as
 SELECT building, amenity, way FROM planet_osm_polygon
 where building = 'hospital' or amenity = 'hospital' or amenity = 'doctors' or building = 'doctors'
 ```
+
+
+![image.close](Des_zoom.png)
