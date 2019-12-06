@@ -6,7 +6,7 @@ The purpose of this lab was to use skills in SQL and database management to run 
 
 The question that we chose to illustrate was the relationship between road access and housing accross the city. Road access is increadibly important for rapid transit which is in-turn an important part of emergancy services. In critical, a few extra minutes for an ambulance trip can be a tipping point (or a burnt down neighborhood, although fire services were not the focus of our work). Our research question involved determining road networks throughout Dar es Salaam, which is a proxy for emergecny vehicle access and connectivity. Why this is not a clear-cut and easily answerable question is because of how road
 
-To access the final product, follow the link below.
+To access the final product, follow the link below. To return, click the link "rmkelley" in the bottom right of the map.
 [Leaflet map of road access to hospitals in Dar es Salaam](qgis2web_2019_12_05-15_55_46_601626/index.html)
 
 To download our SQL code to understand our exact queries, click on the link below.
