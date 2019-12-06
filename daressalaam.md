@@ -72,24 +72,25 @@ update planet_osm_line set width = replace(width, 'O', '0');
 update planet_osm_line set width = trim(width, ' Mmetrs');
 --This trims everyhing in the column width after any part of 'Mmetrs' appears.
 ALTER TABLE planet_osm_line ADD COLUMN nwidth float;
-
+--This adds a the column nwidth.--
 UPDATE planet_osm_line SET nwidth = CAST(width AS float) WHERE highway IS NOT NULL;
-
+--This sets that column equal to width where highway has a value.--
 create table st_transform(geom, "4326")::geometry("4326", 'multipolygon') home as
 SELECT building, amenity FROM planet_osm_polygon WHERE building = 'yes' AND amenity IS NULL OR building = 'residential';
-
+--This names a new table with all the polygons that are residential.--
 select populate_geometry_columns();
 
 UPDATE planet_osm_line SET nwidth = 0 WHERE highway IS NOT NULL AND nwidth is null;
-
+--This step gives a value to roads that exist but did not have anything in width.--
 ALTER TABLE planet_osm_line ADD COLUMN distinction integer;
-
+--This creates a new column.--
 UPDATE planet_osm_line SET distinction = 1 WHERE highway = 'trunk' or highway = 'trunk_link' or highway = 'primary' or highway = 'primary_link';
-
+--This distingushes between types of roads, in this case major roads.--
 UPDATE planet_osm_line SET distinction = 0 WHERE  highway = 'yes'  OR highway =  'unclassified' OR  highway  =  'bridleway' 
 OR  highway = 'construction' OR  highway = 'cycleway' OR highway = 'footway' OR  highway = 'path' OR highway = 'pedestrian' 
 OR highway = 'residential' Or highway=  'road'  OR highway = 'secondary' OR highway = 'secondary_link' OR  highway = 'service' 
 OR  highway = 'steps' OR highway = 'tertiary' Or highway = 'tertiary_link' OR highway = 'track'; 
+--This sets the distinction value for minor roads.--
 ```
 
 ### 3. Create a buffer around the roads to give area. 
@@ -99,7 +100,7 @@ The roads were originally lines with width not represented. We tested multiple d
 ```sql
 CREATE TABLE buffer7 as
 SELECT nwidth, distinction
-
+--This creates a new table.--
 CASE
 WHEN distinction = 1 then ST_Buffer(Geography(way), 18+nwidth/2, 'endcap=round')
 when distinction = 0 then ST_Buffer(Geography(way), 5+nwidth/2, 'endcap=round')
@@ -107,10 +108,10 @@ end  as link
 
 FROM planet_osm_line 
 WHERE highway is not null;
-
-ALTER table home ADD COLUMN linkage float;
+--This buffers the roads in a new column, link.--
 
 update buffer7 set geom = link::geometry('polygon', 4326);
+--This updates the geometry.--
 ```
 
 ### 4. Intersect the building layer with the buffer. 
@@ -118,25 +119,28 @@ update buffer7 set geom = link::geometry('polygon', 4326);
 How many houses are actually in proximity to the road? The buffer was our proxy for ease of access. If your residence is set too far back from a road, it is unlikely to have easy or official access. Especially for medical personnel in an informal settlement. 
 
 ```sql
+ALTER table home ADD COLUMN linkage float;
+--This adds a new column.--
 UPDATE home set linkage = distinction FROM buffer7 WHERE st_intersects(way, geom);
 
 ALTER table home ADD COLUMN subward integer;
-
+--This adds a new column.--
 UPDATE home
 SET subward = fid
 FROM subwardra
 WHERE ST_Intersects(way, ST_makeValid(geom)) ;
-
+--This brings in the subward id.--
 ALTER table home add column access integer;
 
 create table acc as 
  select subward, count(access) as acY from home
  WHERE access = 1
  group by subward;
- 
+--This counts how many homes have access by subward.--
  create table total as 
  select subward, count(access) as acY from home
  group by subward;
+--This creates a new table.--
 ```
 
 ### 5. Once we determined intersection, we had to get that data into a subwards feature. 
@@ -158,7 +162,7 @@ update subwardra
 set pctaccess = (sherlockhomes/allhomes *100);
 
 create table health as
-SELECT building, amenity, way FROM planet_osm_polygon
+SELECT building, amenity, way FROM planet_osm_point
 where building = 'hospital' or amenity = 'hospital' or amenity = 'doctors' or building = 'doctors'
 ```
 
