@@ -10,7 +10,7 @@ This is a compliation of the work that I am doing in Middlebury College's Open S
 
 [Batch Processing of Mnt Kilimanjaro](batch1.md)
 
-[Learn about resiliency in Dar es Salaam](daressalaam.md)
+[Resiliency in Dar es Salaam](daressalaam.md)
 
 [Twitter Article Overview](twitterart.md)
 
