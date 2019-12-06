@@ -2,7 +2,7 @@
 
 Click [here](index.md) to return to my homepage.
 
-The purpose of this lab was to use skills in SQL and database management to run vulnerability analyses on open street map data of Dar es Salaam. World Bank investment in the area and the mapping efforts of [Ramani Huria](https://ramanihuria.org/about-us/) (from whom we aquired the subward layers for QGIS) have led to Dar es Salaam being one of the most mapped areas on Open Streetmap. Working with Ben Dohan and inspired by the missions of [Resilience Academy](https://resilienceacademy.ac.tz/) and Ramani Huria, we wanted to explore using opensource software and data to make conduct meaningful analysis that remains replicable. Our work focused on writing scripts and using data that could be accessible to anyone, anywhere. The same goes for our results, which we made into an online leaflet map.
+The purpose of this lab was to use skills in SQL and database management to run vulnerability analyses on open street map data of Dar es Salaam. World Bank investment in the area and the mapping efforts of [Ramani Huria](https://ramanihuria.org/about-us/) (from whom we aquired the subward layers for QGIS) have led to Dar es Salaam being one of the most mapped areas on Open Streetmap. Working with Ben Dohan and inspired by the missions of [Resilience Academy](https://resilienceacademy.ac.tz/) and Ramani Huria, we wanted to explore using opensource software and data to conduct meaningful analysis while remaining replicable. Our work focused on writing scripts and using data that could be accessible to anyone, anywhere. The same goes for our results, which we made into an online leaflet map.
 
 The question that we chose to illustrate was the relationship between road access and housing accross the city. Road access is increadibly important for rapid transit which is in-turn an important part of emergancy services. In critical, a few extra minutes for an ambulance trip can be a tipping point (or a burnt down neighborhood, although fire services were not the focus of our work). Our research question involved determining road networks throughout Dar es Salaam, which is a proxy for emergecny vehicle access and connectivity. Why this is not a clear-cut and easily answerable question is because of how road networks are recorded in OSM, along with the variability in building and planning processes (if there are any) in informal settlement areas.
 
@@ -12,6 +12,7 @@ To access the final product, follow the link below. To return, click the link "r
 ![image](DeS_map.png)
 
 To download our SQL code to understand our exact queries, click on the link below.
+
 [sql code](DeScode.sql)
 
 General notes to anyone attempting analysis with large amounts of features.
@@ -25,13 +26,15 @@ General notes to anyone attempting analysis with large amounts of features.
 
 ## The results
 
-The image below gets darker as a higher percent of residences in a subward have access to roads. The downtown, which is near the bay, has the highest concentration of medical facilities but also- and this is not shown in our map- has a low concentration of residences. In reality, our map shows both access and the density of housing in an area. The informal areas are relatively well connected via smaller roads. We set a 5-foot buffer for minor roads because those could at least allow for medical personal to get through, and many were larger and would actually be able to accept an ambulance. If you look closely at our map, many of the facilities correspond with borders, which also happen to often be major roads which have increased access to cars and emergency vehicles. We were not able to include roads in our map because of how large the file was, however.
+The image below gets darker as a higher percent of residences in a subward have access to roads. The downtown, which is near the bay, has the highest concentration of medical facilities but also- and this is not shown in our map- has a low concentration of residences. In reality, our map shows both access and the density of housing in an area. The informal areas are relatively well connected via smaller roads. We set a 5-foot buffer for minor roads because those could at least allow for medical personal to get through, and many were larger and would actually be able to accept an ambulance. If you look closely at our map, many of the facilities correspond with borders, which also happen to often be major roads which have increased access to cars and emergency vehicles. We were not able to include roads in our map because of how large the file was, however. The image above also shows how health services are clustered towards the center of the city, although I am inclined to believe that is a data shortcoming, as opposed to such a wide swath of the citybeing void of any health services.
 
 ![image.close](Des_zoom.png)
 
 ## Conclusion
 
 This lab showed me both the possibilities of open source software and data, but also many of the challenges and limitations that come with it. Data sources like open streetmap are an increadibly useful way to source and share information, but also have a level of variability that official datasets often do not. That is the price of having everyone be an equal player in how information is written and shared. But, it means that anyone could look at my code and decide to see if it still works in Dar es Salaam (it will) or take it to any other city. Aside from the subwards layer, all this work is replicable in other geographies. The tags may change, but that is an aspect of open streetmap that half an hour of research should be able to figure out and correct for.
+
+I happened to be interested in transportation and health, but the data in open streetmap has a myriad of possibilities. Other members of my class analyzed topics from wetlands to informal settlements and more. Head over [here](GIS4DEV.github.io/index.md) to see them if you are interested. 
 
 ## Our steps:
 
