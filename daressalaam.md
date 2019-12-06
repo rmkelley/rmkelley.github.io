@@ -4,7 +4,7 @@ Click [here](index.md) to return to my homepage.
 
 The purpose of this lab was to use skills in SQL and database management to run vulnerability analyses on open street map data of Dar es Salaam. World Bank investment in the area and the mapping efforts of [Ramani Huria](https://ramanihuria.org/about-us/) have led to Dar es Salaam being one of the most mapped areas on Open Streetmap. Working with Ben Dohan and inspired by the missions of [Resilience Academy](https://resilienceacademy.ac.tz/) and Ramani Huria, we wanted to explore using opensource software and data to make conduct meaningful analysis that remains replicable. Our work focused on writing scripts and using data that could be accessible to anyone, anywhere. The same goes for our results, which we made into an online leaflet map.
 
-The question that we chose to illustrate was the relationship between road access and housing accross the city. Road access is increadibly important for rapid transit which is in-turn an important part of emergancy services. In critical, a few extra minutes for an ambulance trip can be a tipping point (or a burnt down neighborhood, although fire services were not the focus of our work). Our research question involved determining road networks throughout Dar es Salaam, which is a proxy for emergecny vehicle access and connectivity. Why this is not a clear-cut and easily answerable question is because of how road
+The question that we chose to illustrate was the relationship between road access and housing accross the city. Road access is increadibly important for rapid transit which is in-turn an important part of emergancy services. In critical, a few extra minutes for an ambulance trip can be a tipping point (or a burnt down neighborhood, although fire services were not the focus of our work). Our research question involved determining road networks throughout Dar es Salaam, which is a proxy for emergecny vehicle access and connectivity. Why this is not a clear-cut and easily answerable question is because of how road networks are recorded in OSM, along with the variability in building and planning processes (if there are any) in informal settlement areas.
 
 To access the final product, follow the link below. To return, click the link "rmkelley" in the bottom right of the map.
 [Leaflet map of road access to hospitals in Dar es Salaam](qgis2web_2019_12_05-15_55_46_601626/index.html)
@@ -150,20 +150,21 @@ We made a table that took data from homes and subwards, and then took the agglom
 ```sql
 update subwardra 
 set allhomes2 = acT FROM acc WHERE acc.subward = subwardra.fid;
-
+--This brings our data into the subwards polygons.--
 alter table subwardra add column sherlockhomes2 float;
-
+--This adds a new column with a quirky name.--
 update subwardra 
 set sherlockhomes2 = acY FROM total WHERE total.subward = subwardra.fid;
-
+--This adds data to that field.--
 alter table home add column pctaccess float;
-
+--This adds a column.--
 update subwardra
 set pctaccess = (sherlockhomes/allhomes *100);
-
+--This creates our main result, how many homes have clear access to roads.--
 create table health as
 SELECT building, amenity, way FROM planet_osm_point
 where building = 'hospital' or amenity = 'hospital' or amenity = 'doctors' or building = 'doctors'
+--This creates a layer showing the locations of health centers, doctors, hospitals, etc. to be used as comparison to accessability.
 ```
 
 
