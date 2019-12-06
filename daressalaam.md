@@ -9,6 +9,8 @@ The question that we chose to illustrate was the relationship between road acces
 To access the final product, follow the link below. To return, click the link "rmkelley" in the bottom right of the map.
 [Leaflet map of road access to hospitals in Dar es Salaam](qgis2web_2019_12_05-15_55_46_601626/index.html)
 
+![image](DeS_map.png)
+
 To download our SQL code to understand our exact queries, click on the link below.
 [sql code](DeScode.sql)
 
