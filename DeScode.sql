@@ -69,6 +69,6 @@ update subwardra
 set pctaccess = (sherlockhomes/allhomes *100);
 
 create table health as
-SELECT building, amenity, way FROM planet_osm_polygon
+SELECT building, amenity, way FROM planet_osm_point
 where building = 'hospital' or amenity = 'hospital' or amenity = 'doctors' or building = 'doctors'
 
