@@ -1,6 +1,6 @@
 ## First and Second Labs: QGIS Modelling
 
-Here is a [link](index.md) back to the home page
+Here is a [link](index.md) back to the home page.
 
 Open source software has never been a more accessible and powerful alternative to proprietary software than it is today. Statistical programs such as R have been mainstreamed and for spatial software, QGIS has an active and growing community of developers and users. There are user and development conferences such as FOSS4G, and robust online communities. The value of open source software such as QGIS comes from its technical flexibility, economic accessibility, and the philosophical ramifications.
 
