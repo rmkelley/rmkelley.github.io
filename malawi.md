@@ -22,11 +22,13 @@ Because the goal of Malcomb's research was to create a vulnerability assessment,
 
 ![cap](adaptiveC.PNG)
 
+While this adaptive capacity map seems to give clear-cut answers to adaptive capacity across Malawi, in reality it is unreliable. In total the country is just 840km tall and no more than 160km across at its most wide. Parts of the country are just 10km across. The DHS community data was randomized up to 10km from its actual location (although almost all were no more than 5km). Because of the small size of the country, it is very probable that some communities crossed traditional authority borders, thus leading to incorrect aggregates.
+
 ![Fine Res](Finepic3.png)
 
 ![Coarse Res](Coarsepic3.png)
 
-The drought and flood data came in different sized raster resolutions (0.04166666 vs 0.08333333 decimal degrees for drought and flood respectively), meaning that one of the two datasets had to be converted to the other to allow for analysis. The article's resolution size matches more closely to the fine resolution cells, however, the most accurate (as opposed to precise) of our two maps is the coarse resolution map because data can be aggregated, but not parsed apart in this instance.
+The drought and flood data came in different sized raster resolutions (0.04166666 vs 0.08333333 decimal degrees for drought and flood respectively), meaning that one of the two datasets had to be converted to the other to allow for analysis. The article's resolution size matches more closely to the fine resolution cells, however, the most accurate (as opposed to precise) of our two maps is the coarse resolution map because data can be aggregated, but not parsed apart in this instance. We made both of these into quintiles outside of our model using GRASS in QGIS. While the flood data was already separated into quintiles and simply needed the values to be shifted up 1 to fit our scale, the drought data had to be made into quintiles.
 
 This model was our best guess at Malcomb's workflow. While it creates a similar output to his paper, much of his work was a black box so we cannot be sure.
 ![model](model_vulnurability.PNG)
