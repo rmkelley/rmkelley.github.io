@@ -46,6 +46,8 @@ This is the median gross rent of all census tracts within Mass.
 This map is the total latinx population in each county.
 ![Mass Latinx Population](MASSlatinx.PNG)
 
+The intent is to show clusters of latinx communities and individuals, so the populations are not normalized. Normalizing it would have the potential to show the highest concentrations of latinx individuals, but would not necessarally show where they live overall- just in higher densities.
+
 A comparison between the two shows that while housing prices are higher in many urban areas, parts of the Cape, the Berkshires, and the North Shore, Latinx populations are strongly tied to urban areas.
 
 The following two links lead to plots taken from the main model.
