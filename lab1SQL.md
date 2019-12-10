@@ -46,7 +46,7 @@ This is the median gross rent of all census tracts within Mass.
 This map is the total latinx population in each county.
 ![Mass Latinx Population](MASSlatinx.PNG)
 
-The intent is to show clusters of latinx communities and individuals, so the populations are not normalized. Normalizing it would have the potential to show the highest concentrations of latinx individuals, but would not necessarally show where they live overall- just in higher densities.
+The intent is to show clusters of latinx communities and individuals, so the populations are not normalized. Normalizing it would have the potential to show the highest concentrations of latinx individuals, but would not necessarily show where they live overall- just in higher densities.
 
 A comparison between the two shows that while housing prices are higher in many urban areas, parts of the Cape, the Berkshires, and the North Shore, Latinx populations are strongly tied to urban areas.
 
@@ -73,6 +73,6 @@ Here are the original datafiles (including metatada) that i drew from.
 
 ### Concluding Notes
 
-This lab is interesting because I took a problem themed around Chicago and reworked its meaning to be about Massachusetts- and entierly different geograhic scale. Some of my takeaways were different, some the same, and that matters because it shows the crossalicabiltiy of analysis. Because I included all of my data, models, and explained the steps that I took, others are both able to reproduce my work while also relicating it at different places or geographies.
+This lab is interesting because I took a problem themed around Chicago and reworked its meaning to be about Massachusetts- and entirely different geographic scale. Some of my takeaways were different, some the same, and that matters because it shows the cross-applicability of analysis. Because I included all of my data, models, and explained the steps that I took, others are both able to reproduce my work while also replicating it at different places or geographies. It also should provide a warning to other researchers, because I neglected to save some of my intermediary steps the first time I went through this workflow which later on made me duplicate my efforts to create a thorough documentation of my work.
 
 Here is a [link](index.md) back to the home page
