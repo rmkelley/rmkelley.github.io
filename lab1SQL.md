@@ -71,6 +71,8 @@ Here are the original datafiles (including metatada) that i drew from.
 [Latinx](ACS_17_5YR_B03001.zip)
 [Rent](ACS_17_5YR_B25063.zip)
 
+### Concluding Notes
 
+This lab is interesting because I took a problem themed around Chicago and reworked its meaning to be about Massachusetts- and entierly different geograhic scale. Some of my takeaways were different, some the same, and that matters because it shows the crossalicabiltiy of analysis. Because I included all of my data, models, and explained the steps that I took, others are both able to reproduce my work while also relicating it at different places or geographies.
 
 Here is a [link](index.md) back to the home page
