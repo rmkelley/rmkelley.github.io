@@ -24,7 +24,7 @@ Here is a link to the page containing the non-SQL version of the model.
 
 [First model](qgisModel.md)
 
-And here is a link to the model to build the centroid of the whole study area.
+And here is a link to the model to build the centroid of Boston. I used select by feature in QGIS and set COUNTYFP to 025 to produce only Boston. Then I ran the model below specifying only selected features.
 
 [Center](MassCent.model3)
 
