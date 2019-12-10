@@ -7,6 +7,14 @@ The following are a series of PNGs to illustrate the workflow of creating and re
 
 My final result is a map of channel networks in line form imposed over my analytical hillshading layer to help geographically and topographically situate the channel networks layer.
 
+### Data
+
+[SAGA Software](saga-6.4.0_x64.zip)
+[SAGA Webage](http://www.saga-gis.org/en/index.html)
+[SAGA tool documentation](http://www.saga-gis.org/saga_tool_doc/6.4.0/)
+[SAGA Satellite Image Analysis and Terrain Modelling Manual](SAGA Satellite Image Analysis and Terrain Modelling Manual.pdf)
+
+
 ## Mosaiced ASTER Layers
 ![00](00mosaic.png)![](00mosaic_legend.png)
 
