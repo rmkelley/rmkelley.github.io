@@ -12,6 +12,10 @@ That is why I think that open source offerings in academia are incredibly valuab
 
 ![Capture of the SQL Model in Edit Mode](model_sql.PNG)
 
+The censusfeatures input is the census tracts of the area that I want to analyze, in this case Massachusetts.
+The City Center is the point that I want to use as the center for anaylsis.
+The Field Name Prefix allows users to customize the prefix of their output fieldnames.
+
 ![Capture of the Center Point Model](MASScent.PNG)
 
 The most interesting points of the screen captures is that switching to SQL in my model forced me to make the center point in a seperate step, seen in the second screen capture. I literally took the same steps from the main model and moved them over to create an output, but that made all the difference. It showcases the irregularity of software like QGIS. For all their benefits, there are still bugs. The trick is being able to work around them. A second quirk is that the vector layer as an input simply would not work, however a vector feature layer would. These are the sorts of things that it is important to identify, and then figure out a workaround. Someone who knows more code than I could possibly go in and fix it themselves. This connects to the overall issues of open source that I mentioned earlier, however. It lends itself to those with some sort of coding experience, or at least an understanding of what sorts of issues they might confront. It can be a challenging format for beginners.
