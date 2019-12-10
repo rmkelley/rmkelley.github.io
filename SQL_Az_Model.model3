@@ -244,16 +244,17 @@
   </Option>
   <Option type="Map" name="help">
     <Option type="QString" value="Robert Kelley with direction from Professor Holler, Middlebury College" name="ALG_CREATOR"/>
-    <Option type="QString" value="This model enables you to find the distance and direction from all points in a layer to a specified point." name="ALG_DESC"/>
+    <Option type="QString" value="This model enables you to find the distance and direction from all points in a layer to a specified point.&#xa;&#xa;Outputs&#xa;-DistSQl is the disance from your centerpoint in meters.&#xa;-dir is the direction from your centerpoint in radians.&#xa;-CardinalDir is the direction of the tract from the center." name="ALG_DESC"/>
     <Option type="QString" value="Robert Kelley" name="ALG_HELP_CREATOR"/>
     <Option type="QString" value="" name="ALG_VERSION"/>
-    <Option type="QString" value="https://rmkelley.github.io/qgisModel.html" name="HELP_URL"/>
+    <Option type="QString" value="https://rmkelley.github.io/lab1SQL.html" name="HELP_URL"/>
     <Option type="QString" value="" name="SHORT_DESCRIPTION"/>
     <Option type="QString" value="censusfeatures is the shapefile that you want to analyze." name="censusfeatures"/>
     <Option type="QString" value="City center is the central buisness distrct of the urban area. This can be both a point that has been inported or the mean of several centroids which you must select beforehand on the layer." name="citycenter"/>
     <Option type="QString" value="This allows you to customize the prefix for your outputs." name="fieldnameprefix"/>
     <Option type="QString" value="This layer must be polygons. It is the layer from which the distance to the city center will be factored." name="inputfeatures"/>
     <Option type="QString" value="The output of this model is the distance (in meters) and direction (in degrees) of each polygon from the centeral area inserted to the algorithm." name="qgis:fieldcalculator_2:Direction Distance Output"/>
+    <Option type="QString" value="" name="qgis:fieldcalculator_4:AzCardDirDist"/>
   </Option>
   <Option name="modelVariables"/>
   <Option type="QString" value="Middlebury" name="model_group"/>
