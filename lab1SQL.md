@@ -20,9 +20,13 @@ This is a version of my model that uses some SQL code.
 
 [SQL model version](SQL_Az_Model.model3)
 
-Here is a link to the page containing the non-SQL version of the model
+Here is a link to the page containing the non-SQL version of the model.
 
 [First model](qgisModel.md)
+
+And here is a link to the model to build the centroid of the whole study area.
+
+[Center](MassCent.model3)
 
 This is a map of the distance of any given cencus tract from Boston with a graduated data representation. This legend (and all subsequent ones) were excluded due to the technical challenge of including them.
 ![Mass Distance](MASSdistance.PNG)
