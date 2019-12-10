@@ -56,6 +56,6 @@ A note on the relevance of the model to entities larger than cities: While Massa
 
 ### My Data
 
-[Mass Shapefile](cb_2018_25_tract_500k.shp)
+[Mass Shapefile](lab1_data.gpkg)
 
 Here is a [link](index.md) back to the home page
