@@ -13,12 +13,12 @@ That is why I think that open source offerings in academia are incredibly valuab
 ![Capture of the SQL Model in Edit Mode](model_sql.PNG)
 
 The censusfeatures input is the census tracts of the area that I want to analyze, in this case Massachusetts.
-The City Center is the point that I want to use as the center for anaylsis.
+The City Center is the point that I want to use as the center for analysis.
 The Field Name Prefix allows users to customize the prefix of their output fieldnames.
 
 ![Capture of the Center Point Model](MASScent.PNG)
 
-The most interesting points of the screen captures is that switching to SQL in my model forced me to make the center point in a seperate step, seen in the second screen capture. I literally took the same steps from the main model and moved them over to create an output, but that made all the difference. It showcases the irregularity of software like QGIS. For all their benefits, there are still bugs. The trick is being able to work around them. A second quirk is that the vector layer as an input simply would not work, however a vector feature layer would. These are the sorts of things that it is important to identify, and then figure out a workaround. Someone who knows more code than I could possibly go in and fix it themselves. This connects to the overall issues of open source that I mentioned earlier, however. It lends itself to those with some sort of coding experience, or at least an understanding of what sorts of issues they might confront. It can be a challenging format for beginners.
+The most interesting points of the screen captures is that switching to SQL in my model forced me to make the center point in a separate step, seen in the second screen capture. I literally took the same steps from the main model and moved them over to create an output, but that made all the difference. It showcases the irregularity of software like QGIS. For all their benefits, there are still bugs. The trick is being able to work around them. A second quirk is that the vector layer as an input simply would not work, however a vector feature layer would. These are the sorts of things that it is important to identify, and then figure out a workaround. Someone who knows more code than I could possibly go in and fix it themselves. This connects to the overall issues of open source that I mentioned earlier, however. It lends itself to those with some sort of coding experience, or at least an understanding of what sorts of issues they might confront. It can be a challenging format for beginners.
 
 This is a version of my model that uses some SQL code.
 
@@ -32,7 +32,7 @@ And here is a link to the model to build the centroid of Boston. I used select b
 
 [Center](MassCent.model3)
 
-This is a map of the distance of any given cencus tract from Boston with a graduated data representation. This legend (and all subsequent ones) were excluded due to the technical challenge of including them.
+This is a map of the distance of any given census tract from Boston with a graduated data representation. This legend (and all subsequent ones) were excluded due to the technical challenge of including them.
 ![Mass Distance](MASSdistance.PNG)
 
 This map shows the direction of each census tract from the centroid of Boston.
@@ -62,7 +62,7 @@ A note on the relevance of the model to entities larger than cities: While Massa
 
 [Mass Shapefile](lab1_data.gpkg)
 
-The column HD01_VD01 is rent while the column HD01_VD03 is the latinx population. I got this data from [the Census Bureau](https://factfinder.census.gov/faces/nav/jsf/pages/guided_search.xhtml) It came in two seperate datatables which I then joined by their GEO.id2 to the shapefile's GEOID. I had to create new columns for both values using Field Calculator, however, as the initial data type was 'string' and I needed it to be numeric- in this case 'double'.
+The column HD01_VD01 is rent while the column HD01_VD03 is the latinx population. I got this data from [the Census Bureau](https://factfinder.census.gov/faces/nav/jsf/pages/guided_search.xhtml) It came in two separate data tables which I then joined by their GEO.id2 to the shapefile's GEOID. I had to create new columns for both values using Field Calculator, however, as the initial data type was 'string' and I needed it to be numeric- in this case 'double'.
 
 Here are the original datafiles (including metatada) that i drew from.
 [Shapefile](ACS_17_5YR_B03001.zip)
