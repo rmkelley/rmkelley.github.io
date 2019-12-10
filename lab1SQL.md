@@ -58,4 +58,7 @@ A note on the relevance of the model to entities larger than cities: While Massa
 
 [Mass Shapefile](lab1_data.gpkg)
 
+The column HD01_VD01 is rent while the column HD01_VD03 is the latinx population. I got this data from [the Census Bureau](https://factfinder.census.gov/faces/nav/jsf/pages/guided_search.xhtml) It came in two seperate datatables which I then joined by their GEO.id2 to the shapefile's GEOID. I had to create new columns for both values using Field Calculator, however, as the initial data type was 'string' and I needed it to be numeric- in this case 'double'.
+
+
 Here is a [link](index.md) back to the home page
