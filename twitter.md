@@ -24,6 +24,8 @@ Over the past several years, big data has taken the world by storm. Whether it i
 
 ![netword](dornet.png)
 
+![where](dortweetlocals.PNG)
+
 ![yes_no](occurnce_map.PNG)	
 ![sig](significance_map.PNG)
 ![Q](base_heat.png) 
