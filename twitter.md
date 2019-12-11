@@ -114,6 +114,7 @@ where ntdi is null
 Here is the RStudio code that I used to create the word grahics.
 
 Word Network:
+```
 dorianWordPairs %>%
   filter(n >= 30) %>%
   graph_from_data_frame() %>%
@@ -125,8 +126,10 @@ dorianWordPairs %>%
        subtitle = "Text mining twitter data ",
        x = "", y = "") +
   theme_void()
+```
 
 Unique Word Frequency
+```
 dorianWords %>%
   count(word, sort = TRUE) %>%
   top_n(15) %>%
@@ -138,6 +141,7 @@ dorianWords %>%
   labs(x = "Count",
        y = "Unique words",
        title = "Count of unique words found in tweets")
+```
 
 ### Results
 
