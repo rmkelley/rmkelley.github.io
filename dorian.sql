@@ -40,7 +40,7 @@ select count(status_id) as dortweet ,geoid
 FROM dorian
 GROUP BY geoid is not null
 
---This adds a column to Novemebr that is its total tweets.
+--This adds a column to Novemeber that is its total tweets.
 ALTER TABLE november ADD COLUMN novtweet integer;
 select count(status_id) as novtweet, geoid
 FROM november
