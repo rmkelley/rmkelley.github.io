@@ -223,8 +223,7 @@ dorianWords %>%
   coord_flip() +
   labs(x = "Count",
        y = "Unique words",
-       title = "Count of unique words found in tweets",
-       subtitle = "With 'celtics' removed")
+       title = "Count of unique words found in tweets")
 
 dorianWordPairs <- dorianGeo %>% select(text) %>%
   mutate(text = removeWords(text, stop_words$word)) %>%
@@ -235,7 +234,7 @@ dorianWordPairs <- dorianWordPairs %>% count(word1, word2, sort=TRUE)
 
 #graph a word cloud with space indicating association. you may change the filter to filter more or less than pairs with 10 instances
 dorianWordPairs %>%
-  filter(n >= 20) %>%
+  filter(n >= 30) %>%
   graph_from_data_frame() %>%
   ggraph(layout = "fr") +
   # geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
