@@ -6,6 +6,8 @@ Click [here](index.md) to return to the main page.
 
 Over the past several years, big data has taken the world by storm. Whether it is 
 
+![trump](sharpie.jpg)
+
 ### Data and code
 
 [Dorian tweet status ids](dorianScrub.csv)
