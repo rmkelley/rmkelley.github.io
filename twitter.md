@@ -22,6 +22,38 @@ An important note about twitter data is that users are more likely to be technol
 
 ### Methods
 
+Here is the RStudio code that I used to create the word grahics. The code used to make the data used in these scripts is commented in the SQL download link above.
+
+Unique Word Frequency
+```
+dorianWords %>%
+  count(word, sort = TRUE) %>%
+  top_n(15) %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(x = word, y = n)) +
+  geom_col() +
+  xlab(NULL) +
+  coord_flip() +
+  labs(x = "Count",
+       y = "Unique words",
+       title = "Count of unique words found in tweets")
+```
+
+Word Network:
+```
+dorianWordPairs %>%
+  filter(n >= 30) %>%
+  graph_from_data_frame() %>%
+  ggraph(layout = "fr") +
+  # geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+  geom_node_point(color = "darkslategray4", size = 3) +
+  geom_node_text(aes(label = name), vjust = 1.8, size = 3) +
+  labs(title = "Word Network: Dorian Twitter Events",
+       subtitle = "Text mining twitter data ",
+       x = "", y = "") +
+  theme_void()
+```
+
 Here is the sql code that I used to connect the tweet data to the counties and to create the tweet ratios.
 
 ```sql
@@ -109,38 +141,6 @@ where (dorcount+novcount)>0
 update counties 
 set ntdi = 0
 where ntdi is null
-```
-
-Here is the RStudio code that I used to create the word grahics.
-
-Word Network:
-```
-dorianWordPairs %>%
-  filter(n >= 30) %>%
-  graph_from_data_frame() %>%
-  ggraph(layout = "fr") +
-  # geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
-  geom_node_point(color = "darkslategray4", size = 3) +
-  geom_node_text(aes(label = name), vjust = 1.8, size = 3) +
-  labs(title = "Word Network: Dorian Twitter Events",
-       subtitle = "Text mining twitter data ",
-       x = "", y = "") +
-  theme_void()
-```
-
-Unique Word Frequency
-```
-dorianWords %>%
-  count(word, sort = TRUE) %>%
-  top_n(15) %>%
-  mutate(word = reorder(word, n)) %>%
-  ggplot(aes(x = word, y = n)) +
-  geom_col() +
-  xlab(NULL) +
-  coord_flip() +
-  labs(x = "Count",
-       y = "Unique words",
-       title = "Count of unique words found in tweets")
 ```
 
 ### Results
