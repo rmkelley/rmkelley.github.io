@@ -10,19 +10,19 @@ Over the past several years, big data has taken the world by storm. Whether it i
 
 ### Data and code
 
-An important note about twitter data is that users are more likely to be technologically competant, younger, and able to afford a mobile or web connected device. When thinking about who is in the most danger from extreme events or other disasters, it is not people who have the means or capacity to act for themselves who are at risk.
+An important note about twitter data is that users are more likely to be technologically competent, younger, and able to afford a mobile or web connected device. When thinking about who is in the most danger from extreme events or other disasters, it is not people who have the means or capacity to act for themselves who are at risk.
 
 [Dorian tweet status ids](dorianScrub.csv)
 
 [November tweet status ids](novemberScrub.csv)
 
-[R code for text anaylsis and data creation](twitterForLab.r)
+[R code for text analysis and data creation](twitterForLab.r)
 
 [This SQL code](dorian.sql) was used in PostGIS for QGIS analysis.
 
 ### Methods
 
-Here is the RStudio code that I used to create the word grahics. The code used to make the data used in these scripts is commented in the SQL download link above.
+Here is the RStudio code that I used to create the word graphics. The code used to make the data used in these scripts is commented in the SQL download link above.
 
 Unique Word Frequency
 ```
@@ -67,7 +67,7 @@ UPDATE counties
 SET geometry = st_transform(geometry,102004);
 SELECT populate_geometry_columns('counties'::regclass);
 
---This deletes the counties in states that were not imacted by Dorian.
+--This deletes the counties in states that were not impacted by Dorian.
 DELETE FROM counties
 WHERE "STATEFP" NOT IN ('54', '51', '50', '47', '45', '44', '42', '39', '37',
 '36', '34', '33', '29', '28', '25', '24', '23', '22', '21', '18', '17',
@@ -97,13 +97,13 @@ select count(status_id) as dortweet ,geoid
 FROM dorian
 GROUP BY geoid is not null
 
---This adds a column to Novemeber that is its total tweets.
+--This adds a column to November that is its total tweets.
 ALTER TABLE november ADD COLUMN novtweet integer;
 select count(status_id) as novtweet, geoid
 FROM november
 GROUP BY geoid
 
---This adds a column to my counties that is equal to the total november tweets, seperated by county.
+--This adds a column to my counties that is equal to the total november tweets, separated by county.
 ALTER TABLE counties ADD COLUMN novcount integer;
 update counties 
 set novcount= a
@@ -112,7 +112,7 @@ from november where geoid is not null
 group by geoid) as nc
 where counties."GEOID" = nc.geoid
 
---This adds a column to my counties that is equal to the total november tweets, seperated by county.
+--This adds a column to my counties that is equal to the total november tweets, separated by county.
 ALTER TABLE counties ADD COLUMN dorcount integer;
 update counties 
 set dorcount= a
@@ -121,7 +121,7 @@ from dorian where geoid is not null
 group by geoid) as nc
 where counties."GEOID" = nc.geoid
 
---This normalizes the dorian tweets by poulation (for every 10,000 people).
+--This normalizes the dorian tweets by population (for every 10,000 people).
 ALTER TABLE counties ADD COLUMN normaldor real;
 update counties 
 set normaldor= dorcount/("POP"/10000)
@@ -155,13 +155,13 @@ where ntdi is null
 ![sig](significance_map.PNG)
 ![Q](base_heat.png) 
 
-### Conclution
+### Conclusion
 
-What is facinating about this lab is that anyone with the technelogical know-how could have developed this problem and executed it. All of the data was available, and as far as open source software goes, RStudio and QGIS are relativly accessable. This brings up the question of what can research look like in this modern age of big data? 
+What is fascinating about this lab is that anyone with the technological know-how could have developed this problem and executed it. All of the data was available, and as far as open source software goes, RStudio and QGIS are relatively accessible. This brings up the question of what can research look like in this modern age of big data? 
 
-Each individual in this class found and contributed an article to a literature on twitter-based research, and a large proportion of the articles sourced were inductive- i.e. they took data, began working with it, and then figured out what stuck. Twitter has a history of inspiring and enabling such research because of the sheer amount of data available to researchers. From social networks to geographic location to likes to the actual body of the tweet itself and beyond, there is so much data within just a single tweet. Twitter is of course more than a research tool, however. It is only useful for academics because people in society take to the platform to express themselves, share information, have conversations, and more. It is a freeflowing conversation. Elwood et al. (2012) describe how voulnteered geographic information is changing the academic field of geography and beyond. VGI is not limited to tweets, but can be anything from a geotagged photo to a forum like OpenStreetMap.
+Each individual in this class found and contributed an article to a literature on twitter-based research, and a large proportion of the articles sourced were inductive- i.e. they took data, began working with it, and then figured out what stuck. Twitter has a history of inspiring and enabling such research because of the sheer amount of data available to researchers. From social networks to geographic location to likes to the actual body of the tweet itself and beyond, there is so much data within just a single tweet. Twitter is of course more than a research tool, however. It is only useful for academics because people in society take to the platform to express themselves, share information, have conversations, and more. It is a free flowing conversation. Elwood et al. (2012) describe how volunteered geographic information is changing the academic field of geography and beyond. VGI is not limited to tweets, but can be anything from a geotagged photo to a forum like OpenStreetMap.
 
-Oh- and it is also good to know that a statistically significant amount of people in the places that Trump lied about being in danger were not stupid or blind enough to belive him. This time, at least.
+Oh- and it is also good to know that a statistically significant amount of people in the places that Trump lied about being in danger were not stupid or blind enough to believe him. This time, at least.
 
 
 ### Citations
