@@ -107,7 +107,7 @@ where (dorcount+novcount)>0
 update counties 
 set ntdi = 0
 where ntdi is null
-'''sql
+'''
 
 ### Results
 
