@@ -16,7 +16,7 @@ Over the past several years, big data has taken the world by storm. Whether it i
 
 [R code for text anaylsis and data creation](twitterForLab.r)
 
-[This SQL code](dorain.sql) was used in PostGIS for QGIS analysis.
+[This SQL code](dorian.sql) was used in PostGIS for QGIS analysis.
 
 
 
