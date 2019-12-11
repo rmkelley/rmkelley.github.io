@@ -4,13 +4,24 @@ Click [here](index.md) to return to the main page.
 
 ## Introduction
 
-Over the past several years, big data has taken the world by storm. Whether it is 
+Over the past several years, big data has taken the world by storm. Whether it is to figure out who is doing what and where, how Amazon figures out how to maximize shipping efficiencies, how a police force decides who to target, or how academics try to understand more of human nature, big data is opening up new frontiers in research possibilities.
+
+Twitter is one such popular destination for people looking for big data due to the high volume of tweets created each day. Roughly 1% of Twitter users are location-enabled, enabling geographic analysis with enough tweets.
+
+### Disaster Strikes
+
+One common use of Twitter data has been for disaster analysis, because people often go to social media to express thoughts, needs, or concerns about current events- and few things are more current than a disaster in your area. That is why it was a big deal when President Trump promoted an inaccurate portrayal of hurricane Dorian's path by using a sharpie extension: SharpieGate. The question that we asked, then, was whether or not this misleading image influenced people to tweet about Dorian at disproportionate numbers where Trump said there would be a storm but there was not. This in turn created two questions: Where were people tweeting more about Dorian, if at all, and then what were they tweeting about.
 
 ![trump](sharpie.jpg)
 
+The basis of this lab involved streaming tweets using a Twitter API during the Dorian storm and over a baseline week during the month of November (2019). This was conducted by Professor Holler, who then provided us with the tweet datafiles to use in our analysis. Using both twitter data and US Census shapefiles in RStudio, QGIS, and GeoDa, this was a very open sourced project.
+
 ### Data and code
 
-An important note about twitter data is that users are more likely to be technologically competent, younger, and able to afford a mobile or web connected device. When thinking about who is in the most danger from extreme events or other disasters, it is not people who have the means or capacity to act for themselves who are at risk.
+An important note about twitter data is that users are more likely to be technologically competent, younger, and able to afford a mobile or web connected device. When thinking about who is in the most danger from extreme events or other disasters, it is not people who have the means or capacity to act for themselves who are as at risk. This means that it is possible that some of the people who might have the most need to post about disasters are not able to.
+
+On the flip side, data security is an important aspect of all social media work because of the tendency for people to share information about others. Sharing the location of a frail individual during a disaster puts that person more in the public eye- and perhaps more exposed to malicious intent.
+
 
 [Dorian tweet status ids](dorianScrub.csv)
 
