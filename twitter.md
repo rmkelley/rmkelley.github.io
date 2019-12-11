@@ -22,6 +22,8 @@ An important note about twitter data is that users are more likely to be technol
 
 ### Methods
 
+Here is the sql code that I used to connect the tweet data to the counties
+
 ```sql
 --This gives november a geometry.
 select addgeometrycolumn('november', 'geom', 102004, 'point',2);
@@ -63,7 +65,7 @@ select count(status_id) as dortweet ,geoid
 FROM dorian
 GROUP BY geoid is not null
 
---This adds a column to Novemebr that is its total tweets.
+--This adds a column to Novemeber that is its total tweets.
 ALTER TABLE november ADD COLUMN novtweet integer;
 select count(status_id) as novtweet, geoid
 FROM november
