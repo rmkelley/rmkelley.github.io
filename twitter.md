@@ -22,7 +22,7 @@ An important note about twitter data is that users are more likely to be technol
 
 ### Methods
 
-'''sql
+```sql
 --This gives november a geometry.
 select addgeometrycolumn('november', 'geom', 102004, 'point',2);
 UPDATE november
@@ -107,8 +107,7 @@ where (dorcount+novcount)>0
 update counties 
 set ntdi = 0
 where ntdi is null
-'''
-
+```
 ### Results
 
 ![freqword](dorword.png)
