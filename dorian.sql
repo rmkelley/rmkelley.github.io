@@ -10,7 +10,7 @@ UPDATE counties
 SET geometry = st_transform(geometry,102004);
 SELECT populate_geometry_columns('counties'::regclass);
 
---This deletes the counties in states that were not imacted by Dorian.
+--This deletes the counties in states that were not impacted by Dorian.
 DELETE FROM counties
 WHERE "STATEFP" NOT IN ('54', '51', '50', '47', '45', '44', '42', '39', '37',
 '36', '34', '33', '29', '28', '25', '24', '23', '22', '21', '18', '17',
@@ -40,13 +40,13 @@ select count(status_id) as dortweet ,geoid
 FROM dorian
 GROUP BY geoid is not null
 
---This adds a column to Novemeber that is its total tweets.
+--This adds a column to November that is its total tweets.
 ALTER TABLE november ADD COLUMN novtweet integer;
 select count(status_id) as novtweet, geoid
 FROM november
 GROUP BY geoid
 
---This adds a column to my counties that is equal to the total november tweets, seperated by county.
+--This adds a column to my counties that is equal to the total november tweets, separated by county.
 ALTER TABLE counties ADD COLUMN novcount integer;
 update counties 
 set novcount= a
@@ -55,7 +55,7 @@ from november where geoid is not null
 group by geoid) as nc
 where counties."GEOID" = nc.geoid
 
---This adds a column to my counties that is equal to the total november tweets, seperated by county.
+--This adds a column to my counties that is equal to the total november tweets, separated by county.
 ALTER TABLE counties ADD COLUMN dorcount integer;
 update counties 
 set dorcount= a
@@ -64,7 +64,7 @@ from dorian where geoid is not null
 group by geoid) as nc
 where counties."GEOID" = nc.geoid
 
---This normalizes the dorian tweets by poulation (for every 10,000 people).
+--This normalizes the dorian tweets by population (for every 10,000 people).
 ALTER TABLE counties ADD COLUMN normaldor real;
 update counties 
 set normaldor= dorcount/("POP"/10000)
