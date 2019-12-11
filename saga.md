@@ -1,6 +1,10 @@
 # Lab Three: Global Digital Elevation Models
 
-The following are a series of PNGs to illustrate the workflow of creating and representing a channel network. I used [ASTER Global DEM data](https://search.earthdata.nasa.gov/projects/new?p=C1575726572-LPDAAC_ECS!C1575726572-LPDAAC_ECS&pg[1][v]=t&m=-3.6013183593749996!36.8272705078125!8!1!0!0%2C2&q=ASTGTM%20V003&sb=37.04867545811095%2C-3.3708454262377217%2C37.75108854319018%2C-2.8136057588355214) and the SAGA project version 6.2 to complete this lab.
+[Click here to go to the main page](index.md)
+
+The following are a series of PNGs to illustrate the workflow of creating and representing a channel network, followed by how I converted the workflow into a batch script.
+
+I used [ASTER Global DEM data](https://search.earthdata.nasa.gov/projects/new?p=C1575726572-LPDAAC_ECS!C1575726572-LPDAAC_ECS&pg[1][v]=t&m=-3.6013183593749996!36.8272705078125!8!1!0!0%2C2&q=ASTGTM%20V003&sb=37.04867545811095%2C-3.3708454262377217%2C37.75108854319018%2C-2.8136057588355214) and the SAGA project version 6.2 to complete this lab.
 
 ## Final Result
 ![Final Result](channel_final.png)![](channel_final_legend.png)
@@ -9,7 +13,11 @@ My final result is a map of channel networks in line form imposed over my analyt
 
 ### Data
 
+NASA/METI/AIST/Japan Spacesystems, and U.S./Japan ASTER Science Team. ASTER Global Digital Elevation Model V003. 2019, distributed by NASA EOSDIS Land Processes DAAC, https://doi.org/10.5067/ASTER/ASTGTM.003
 
+NASA JPL. NASA Shuttle Radar Topography Mission Global 1 arc second. 2013, distributed by NASA EOSDIS Land Processes DAAC, https://doi.org/10.5067/MEaSUREs/SRTM/SRTMGL1.003
+
+The ASTER tiles used were S03E037 and S04E037.
 
 ### Software
 
@@ -31,7 +39,7 @@ The next step was to put the mosaic in the UTM Projection (grid).
 ## Hillshade
 ![02](02hillshade.png)![](02hillshade_legend.png)
 
-After that I had to create a hillshade layer to visualize elevation and shading.
+After that I had to create a hillshade layer to visualize elevation and shading. What happened was a consistent light source was simulated, and then each cell's illumination value was calculated in the context of the surrounding cells.
 
 ## Sink Route
 ![03](03sinkroute.png)![](03sinkroute_legend.png)
@@ -94,14 +102,14 @@ The batch process is a collection of commands written out in the computer's comm
 
 Difference in Elevation
 
-The data is ASTER elevation data subtracted from SRTM elevation data, with orange veering towards ASTER data and blue towards SRTM. Notice there is a diagonal strip running across the frame. I show how a single pass of an imager can dramatically change data outputs.
+The data is ASTER elevation data subtracted from SRTM elevation data, with orange corresponding with ASTER data and blue with SRTM. Notice there is a diagonal strip running across the frame. It shows how a single pass of an imager can dramatically change data outputs.
 
 ![Elevation Difference](Elevation_difference.jpg)
 ![](Elevation_difference_legend.png)
 
 Flow Accumulation initial image
 
-The image below is what SAGA initially put out as the difference between the flow accumulations from the different data sets. The information was there, but not in workable form.
+The image below is what SAGA initially put out as the difference between the flow accumulations from the different data sets. The information was there but was visually confusing making its use challenging without further work.
 
 ![Flow Difference](FA_difference.png)
 ![](FA_difference_legend.png)
@@ -113,7 +121,7 @@ Creating contrast between the two networks was the first step.
 ![Flow Accumulation Difference with Contrast](FA_diff_contrast.png)
 ![](FA_diff_contrast_legend.png)
 
-This is a closeup of the product of the step prior, allowing viewers to see how the flows are very similar and have many of the same movements, but at the ground level are often slightly different.
+This is a closeup of the product of the step prior, allowing viewers to see how the flows are very similar and have many of the same movements, but in reality, are often slightly different.
 
 ![Flow Accumulation Closeup](dif_closeup.PNG)
 
@@ -126,6 +134,8 @@ ASTER Hillshade
 
 ![Aster Hillshade](ASTER_hillshade.png)
 ![](ASTER_hillshade_legend.png)
+
+The hypothetical light source for these hillshades was generated with an azimuth of 315 degrees and an altitude at 45 degrees.
 
 3D Renderings of the channel networks over the hillshade
 
@@ -141,31 +151,27 @@ One thing to note between the two different types of data is the water feature i
 
 Google Satellite Basemap
 
-While there were errors with this in QGIS, Ben Dohan and Koufre found a good workaround inside of QGIS resulting in the same idea.
+Initially I attempted to create this image in QGIS, but after running into issues some classmates found a good workaround inside of SAGA creating the same result.
 
 ![Side by side basemaps](comp_background.PNG)
 
 One visual issue is that at higher elevations, the channel networks never seem to leave the ridges of the mountain. However, this is the result of shadows and the angle of photography. In reality the streams really are in the valleys. The flows are not perfect, however, and one method of minimizing error would be to do flow accumulation from the bottom up and then merge the results.
 
+### Overall Error Comments
+
+The large body of water as well as artificially flattened rice patty fields create error in the flow accumulation. If there is a thick enough canopy over a river channel, satellite imagery will not pick up the riverbed. It might even be marked as a ridge as opposed to depression if the trees are localized over the riverbed and there is nothing in the surrounding area. At higher elevations and steep mountainsides, there is a chance that the radar angle did not find the steepest crevasses. In the datasets, this lack of data was sometimes fixed with interpolation which covered over the very features I was attempting to find. SRTM uses radar, ASTER uses a combination of photographs- often not very many photographs. For the ASTER data at high elevation, there is often really thick cloud cover that prevents accurate photographs meaning that the elevation is recorded as higher than it actually is.
+
+
 SRTM Error1
 
 ![Error 1](SRTM_base_zoom1.PNG)
 
-Here, there are examples of the flows mainly following what one would expect from the imagery, but every so often they jump their tracks and go off in an unexpected direction. This seems most likely to be the result of my unit size and sampling method, either having units too broad or too specific to notice the smallest details- or to over react to them. My assumption is the former because of our discussions in class and because having a 30-meter cell size is very large to try and encapsulate most streams.
+Here, there are examples of the flows mainly following what one would expect from the imagery, but every so often they jump their tracks and go off in an unexpected direction. This seems most likely to be the result of my unit size and sampling method, either having units too broad or too specific to notice the smallest details- or to overreact to them. My assumption is the former because of our discussions in class and because having a 30-meter cell size is very large to try and encapsulate most streams.
 
 SRTM Error2
 
 ![Steep](oops_steep.PNG)
 
-These are examples of where there is what seems like a steep section of the mountain but little differences in terrain to guide it. One likely explanation is that the flow accumulation is based on higher levels of snow and ice at the summit along with higher reflectivity, which is not present in the aerial photography. That exposes an underlying issue with these data sets which we have discussed in class. Because space very often can change over time, having a data set that does not match up squarely with the time frame of other parts of your analysis can create some disjointedness. The ground coverage towards the summit also changes to be more earth and less vegetation, potentially creating more errors for the photography. 
-
-[Click here to go to Hydrology; Lab 3](saga.md)
+These are examples of where there is what seems like a steep section of the mountain but little differences in terrain to guide it. One likely explanation is that the flow accumulation is based on higher levels of snow and ice at the summit along with higher reflectivity, which is not present in the aerial photography. In reality, however, it was a thick cloud cover at higher elevations (as mentioned above) that caused the data errors. That exposes an underlying issue with these data sets which we have discussed in class. Because space very often can change over time, having a data set that does not match up squarely with the time frame of other parts of your analysis can create some disjointedness. The ground coverage towards the summit also changes to be more earth and less vegetation, potentially creating more errors for the photography. 
 
 [Click here to go to the main page](index.md)
-
-Comments from Class 11/25
-
-The large body of water as well as artificially flattened rice patty fields create error in the flow accumulation. If there is a thick enough canopy over a river channel, satellite imagery will not pick up the riverbed. It might even be marked as a ridge as opposed to depression if the trees are localized over the river bed and there is nothing in the surrounding area. At higher elevations and steep mountainsides, there is a chance that the radar angle did not find the most steep crevasses. In the datasets, this lack of data was sometimes fixed with interpolation which covered over the very features I was attempting to find. SRTM uses radar, ASTER uses a combination of photographs- often not very many photographs. For the ASTER data at high elevation, there is often really thick cloud cover that prevents accurate photographs meaning that the elevation is recorded as higher than it actually is.
-
-
-Here is a [link](index.md) to the home page
