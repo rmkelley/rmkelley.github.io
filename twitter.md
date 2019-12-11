@@ -10,17 +10,17 @@ Twitter is one such popular destination for people looking for big data due to t
 
 ### Disaster Strikes
 
-One common use of Twitter data has been for disaster analysis, because people often go to social media to express thoughts, needs, or concerns about current events- and few things are more current than a disaster in your area. That is why it was a big deal when President Trump promoted an inaccurate portrayal of hurricane Dorian's path by using a sharpie extension: SharpieGate. The question that we asked, then, was whether or not this misleading image influenced people to tweet about Dorian at disproportionate numbers where Trump said there would be a storm but there was not. This in turn created two questions: Where were people tweeting more about Dorian, if at all, and then what were they tweeting about.
+One common use of Twitter data has been for disaster analysis, because people often go to social media to express thoughts, needs, or concerns about current events- and few things are more current than a disaster in your area. That is why it was a big deal when President Trump promoted an inaccurate portrayal of hurricane Dorian's path by using a sharpie extension: Sharpiegate. The question that we asked, then, was whether or not this misleading image influenced people to tweet about Dorian at disproportionate numbers where Trump said there would be a storm but there was not. This in turn created two questions: Where were people tweeting more about Dorian, if at all, and then what were they tweeting about.
 
 ![trump](sharpie.jpg)
 
-The basis of this lab involved streaming tweets using a Twitter API during the Dorian storm and over a baseline week during the month of November (2019). This was conducted by Professor Holler, who then provided us with the tweet datafiles to use in our analysis. Using both twitter data and US Census shapefiles in RStudio, QGIS, and GeoDa, this was a very open sourced project.
+The basis of this lab involved streaming tweets using a Twitter API during the Dorian storm and over a baseline week during the month of November (2019). This was conducted by Professor Holler, who then provided us with the tweet datafiles to use in our analysis. Using both twitter data and US Census shapefiles in RStudio, QGIS, and GeoDa, this was a very open sourced project. While Trump made it seem like the Gulf Coast was under threat, hurricane Dorian in fact ended up making landfall in the Carolinas as a category 1.
 
 ### Data and code
 
 An important note about twitter data is that users are more likely to be technologically competent, younger, and able to afford a mobile or web connected device. When thinking about who is in the most danger from extreme events or other disasters, it is not people who have the means or capacity to act for themselves who are as at risk. This means that it is possible that some of the people who might have the most need to post about disasters are not able to.
 
-On the flip side, data security is an important aspect of all social media work because of the tendency for people to share information about others. Sharing the location of a frail individual during a disaster puts that person more in the public eye- and perhaps more exposed to malicious intent.
+On the flip side, data security is an important aspect of all social media work because of the tendency for people to share information about others. Sharing the location of a frail individual during a disaster puts that person more in the public eye- and perhaps more exposed to malicious intent (Crawford and Finn, 2014).
 
 
 [Dorian tweet status ids](dorianScrub.csv)
@@ -154,32 +154,54 @@ set ntdi = 0
 where ntdi is null
 ```
 
-### Results
+## Results
+
+### The Dorian Data
 
 ![freqword](dorword.png)
 
+Unsurprisingly, hurricane and Dorian were the two most used words- especially because they are most likely used in conjunction and Dorian was the hurricane in question. After that, Alabama and Sharpiegate were both mentioned, soon followed by Trump and his Twitter handle. Other words commonly associated with storms are also found, including weather, hit, and locations such as the Bahamas and Carolina. This does make it seem like Sharpiegate was a hot topic of conversation- and it was. The question is then, how are these tweets separated.
+
 ![netword](dornet.png)
+
+The bottom left of this network is predominantly focused on more disaster-oriented words, while the bottom right is more closely aligned with words I would associate with Sharpiegate, i.e. sharpie, fake. While there is not a hard distinction, the two groups do have separation between them. The top right of the network is devoted to locations, presumably because those were areas affected. Alabama is notably absent from that section (it is in the bottom left next to hit, which makes sense if people were asking if Alabama got hit because of Sharpiegate). 
 
 ![where](dortweetlocals.PNG)
 
+A visual test of where people were tweeting from during Dorian shows has a strong showing on the East coast which does make sense because of the population centers and the impact of the storm. What is notable is that there is no visual discrepancies in Western Florida or Alabama, the areas that Trump threatened with his sharpie.
+
 ![yes_no](occurnce_map.PNG)	
+
+Using GeoDa (a convenient geographical statistical modeling software), I found the local G* statistic for the ntdi (normalized tweet difference index by county). Set to a significance level of 0.05, the coast- where Dorian hit- had the highest clustering of tweets about the event. Unsurprisingly, the unaffected western counties had a statistically significant amount of nothing to say while there was no significance to the tweeting in the Gulf Coast. It does not seem that Trump's sharpie made waves. This map corresponds to the equation ntdi= (dorcount-novcount)/((dorcount+novcount)* 1.0 from the SQL section in methods.
+
 ![sig](significance_map.PNG)
+
+The map above shows a more detailed view into the significance levels of tweeting.
+
 ![Q](base_heat.png) 
+
+I used QGIS to make a heatmap of where tweets were coming from, normalized for every 10,000 people. This required fixing geometries, creating centroids, and then creating the Kernel Density map. I set the radius to 100km and the pixel size to 500m. The main takeaway here is that people tweeted at a higher frequency near where the hurricane made landfall, in the Carolinas. It also seems like the Massachusetts area got excited- either because Cape Cod was hit or because they love tweeting about Trump's failings.
 
 ### Conclusion
 
-What is fascinating about this lab is that anyone with the technological know-how could have developed this problem and executed it. All of the data was available, and as far as open source software goes, RStudio and QGIS are relatively accessible. This brings up the question of what can research look like in this modern age of big data? 
+While people definitely tweeted about Sharpiegate and about Dorian, I found no evidence that people were duped into thinking that a hurricane was coming for them where none was. People seemed to have tweeted about each separately. While authors such as Wang et al. (2016) see an opportunity in geolocated twitter data because of how it is generated in real time for real events by real people, this data is far from perfect as shown by the efforts of this lab.
 
-Each individual in this class found and contributed an article to a literature on twitter-based research, and a large proportion of the articles sourced were inductive- i.e. they took data, began working with it, and then figured out what stuck. Twitter has a history of inspiring and enabling such research because of the sheer amount of data available to researchers. From social networks to geographic location to likes to the actual body of the tweet itself and beyond, there is so much data within just a single tweet. Twitter is of course more than a research tool, however. It is only useful for academics because people in society take to the platform to express themselves, share information, have conversations, and more. It is a free flowing conversation. Elwood et al. (2012) describe how volunteered geographic information is changing the academic field of geography and beyond. VGI is not limited to tweets, but can be anything from a geotagged photo to a forum like OpenStreetMap.
+Each individual in this class found and contributed an article to a literature on twitter-based research, and a large proportion of the articles sourced were inductive- i.e. they took data, began working with it, and then figured out what stuck. Twitter has a history of inspiring and enabling such research because of the sheer amount of data available to researchers. From social networks to geographic location to likes to the actual body of the tweet itself and beyond, there is so much data within just a single tweet. Twitter is of course more than a research tool, however. It is only useful for academics because people in society take to the platform to express themselves, share information, have conversations, and more. It is a free-flowing conversation. Elwood et al. (2012) describe how volunteered geographic information is changing the academic field of geography and beyond. VGI is not limited to tweets, but can be anything from a geotagged photo to a forum like OpenStreetMap.
+
+What is fascinating about this lab is that anyone with the technological know-how could have developed this problem and executed it. All of the data was available, and as far as open source software goes, RStudio and QGIS are relatively accessible. This brings up the question of what can research look like in this modern age of big data? 
 
 Oh- and it is also good to know that a statistically significant amount of people in the places that Trump lied about being in danger were not stupid or blind enough to believe him. This time, at least.
 
 
 ### Citations
 
+Crawford, K., & Finn, M. (2014). The limits of crisis data: analytical and ethical challenges of using social and mobile data to understand disasters. GeoJournal, 80(4), 491–502. doi: 10.1007/s10708-014-9597-z
+
 Sarah Elwood , Michael F. Goodchild & Daniel Z. Sui (2012) Researching
 Volunteered Geographic Information: Spatial Data, Geographic Research, and New Social
 Practice, Annals of the Association of American Geographers, 102:3, 571-590, DOI:
 10.1080/00045608.2011.595657
+
+Wang, Z., Ye, X., & Tsou, M.-H. (2016). Spatial, temporal, and content analysis of Twitter for wildfire hazards. Natural Hazards, 83(1), 523–540. https://doi.org/10.1007/s11069-016-2329-6
 
 Click [here](index.md) to return to the main page.
