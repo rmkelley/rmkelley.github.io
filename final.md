@@ -28,3 +28,11 @@ The main next step that will make this lab challenging is to push ways to pull d
 The data is going to come from the US census beaureau. I am going to use the ACS 5-year data because the 2010 census is 9 years out of date at this point. The ACS data has been taken on a rolling basis, and the 5-year dataset uses the last 5 years to statistically describe geographic areas. Important fields will be total population and race populations. To get the geographic boundaries, I am planning to follow a similar workflow to the Sharpie Lab. The column name that I believe I will need for joins will be named id2, although I may have to change some names to make that work. The workflow itself is going to be the same as lab 1, except with the intent to open up the data inputs to the use and to put the result online.
 
 Maybe use the spdebt function? This is not the purpose of the lab, just my interest.
+
+# The project
+
+## Methods
+
+```tarr <- get_acs(geography = "tract", variables = "B25064_001",
+                state = "MA", geometry = TRUE, key="3d89f005b11bd0cc562da8eea31dc3ce5011a707")
+```
