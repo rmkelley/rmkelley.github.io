@@ -4,6 +4,8 @@ Here is a [link](index.md) back to the home page
 
 # The project
 
+For my final project I attemtped to recreate the [QGIS Direction Model](lab1SQL.md) from the first two labs, except this time in RStudio. 
+
 ## Methods
 
 This provided a list of all the data columns in the acs 5-year.
