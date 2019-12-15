@@ -8,7 +8,7 @@ This product uses the Census Bureau Data API but is not endorsed or certified by
 
 For my final project I attempted to recreate the [QGIS Direction Model](lab1SQL.md) from the first two labs, except this time in RStudio. Where in the original labs i used model builder(including SQL code) and point-and-click functions in QGIS, this time I used exclusively R code. Something I am particularly proud of (and made my life significantly more difficult) was that I even downloaded the datafiles using R. I have used R before, so many of its basic functions are already familiar to me. Thus, this was mainly an exercise in acquiring data, its manipulation, and exploring new was to present data.
 
-I completed this lab in a cartesian plane due to issues converting any of my data or functions into a CRF. Because it is in a very small geographic area, however, I believe that the variance is minimal. The main reason for this is because having the data as a multipolygon was breaking the functions that allowed for conversion into different coordinate reference systems.
+I completed this lab in a cartesian plane due to issues converting any of my data or functions into a CRF. Because it is in a very small geographic area, however, I believe that the variance is minimal. The main reason for this is because having the data as a multipolygon was breaking the functions that allowed for conversion into different coordinate reference systems. I also only used the data for gross median rent, as opposed to analyzing both that and racial demographics because the coding would simply be repeating the same work as opposed to having to find something new to get race demographic analysis to function.
 
 To download my RStudio code, click [here](Final.R)
 
