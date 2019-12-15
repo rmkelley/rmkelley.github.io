@@ -6,7 +6,7 @@ Here is a [link](index.md) back to the home page
 
 This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.
 
-For my final project I attemtped to recreate the [QGIS Direction Model](lab1SQL.md) from the first two labs, except this time in RStudio. 
+For my final project I attemtped to recreate the [QGIS Direction Model](lab1SQL.md) from the first two labs, except this time in RStudio. Where in the original labs i used model builder(including SQL code) and point-and-click functions in QGIS, this time I used exclusivly R code. Something I am particularly proud of (and made my life significantly more difficult) was that I even downloaded the datafiles using R. I have used R before, so many of its basic functions are already familiar to me.
 
 To download my RStudio code, click [here](Final.R)
 
