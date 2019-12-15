@@ -4,7 +4,11 @@ Here is a [link](index.md) back to the home page
 
 # The project
 
+This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.
+
 For my final project I attemtped to recreate the [QGIS Direction Model](lab1SQL.md) from the first two labs, except this time in RStudio. 
+
+To download my RStudio code, click [here](Final.R)
 
 ## Methods
 
@@ -187,6 +191,11 @@ joined %>%
 ```
 ![distR](distR.png)
 
+## Bibliography
+
+First of all, this work would not have gotten done without the help and support of Professor Holler and Professor Lyford.
+
+There is a [cheetsheet](ggplot2-cheatsheet-2.1.pdf) published by RStudio that was instrumental to making this project work.
 
 
 Here is a [link](index.md) back to the home page
