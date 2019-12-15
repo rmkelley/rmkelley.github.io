@@ -200,3 +200,14 @@ ggplot() +
 ```
 ![dist](Dist.png)
 
+This creates a scatterplot of rent by distance from the downtown.
+```
+joined %>%
+  ggplot(aes(x = meters,
+             y = estimate))+
+  geom_point()+
+  labs(title = "Rent in Boston by Distance",
+       x = "Distance in Meters",
+       y = "Gross Median Rent (dollars)")
+```
+![distR](DistR.png)
