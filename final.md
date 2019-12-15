@@ -10,6 +10,16 @@ For my final project I attemtped to recreate the [QGIS Direction Model](lab1SQL.
 
 To download my RStudio code, click [here](Final.R)
 
+
+I used the following libraries in my work.
+```
+library('tidyverse')
+library("tidytext")
+library('dplyr')
+library("sf")
+library("RColorBrewer")
+library("ggplot2")
+```
 ## Methods
 
 This provided a list of all the data columns in the acs 5-year.
