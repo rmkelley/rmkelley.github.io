@@ -33,6 +33,19 @@ Maybe use the spdebt function? This is not the purpose of the lab, just my inter
 
 ## Methods
 
-```tarr <- get_acs(geography = "tract", variables = "B25064_001",
+This provided a list of all the data columns in the acs 5-year.
+```
+v17 <- load_variables(2017, "acs5", cache = TRUE)
+```
+
+```
+tarr <- get_acs(geography = "tract", variables = "B25064_001",
                 state = "MA", geometry = TRUE, key="3d89f005b11bd0cc562da8eea31dc3ce5011a707")
 ```
+
+```
+bos <- tarr[grep("Suffolk", tarr$NAME), ]
+dt <- bos[grep("Tract 303", bos$NAME), ]
+```
+
+
