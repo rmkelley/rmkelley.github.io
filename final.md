@@ -198,5 +198,5 @@ ggplot() +
   labs(title = " Distance from City Hall",
        fill = "Distance in Meters")
 ```
-![dist](Dist.png
+![dist](Dist.png)
 
