@@ -37,17 +37,96 @@ This provided a list of all the data columns in the acs 5-year.
 ```
 v17 <- load_variables(2017, "acs5", cache = TRUE)
 ```
-
+This provided the census tracts of Massachusetts with a selected variable.
 ```
 tarr <- get_acs(geography = "tract", variables = "B25064_001",
                 state = "MA", geometry = TRUE, key="3d89f005b11bd0cc562da8eea31dc3ce5011a707")
 ```
-
+The first line below selects just the boston tracts, and the second selects the tract where city hall is which will be treated as downtown for this exersize.
 ```
 bos <- tarr[grep("Suffolk", tarr$NAME), ]
 dt <- bos[grep("Tract 303", bos$NAME), ]
 ```
 
+This turns each multipolygon into a centroid.
+```
+cent <- st_centroid(bos$geometry)
+Cdt <- st_centroid(dt$geometry)
+```
+These extract the X,Y coordiantes for each centroid into lists.
+```
+cent1 <- st_coordinates(cent)
+
+cdt1 <- st_coordinates(Cdt)
+```
+
+These create dataframes out of the coordinate lists.
+```
+x <- data.frame(lon = cent1[,"Y"],
+                lat = cent1[,"X"])
+
+
+center <- c(lon = cdt1[,"Y"],
+            lat = cdt1[,"X"])
+```
+
+This function gets the bearing in degrees of each centroid in comparison to the downtown centroid.
+```
+robbieBear <- function(x, center){
+  bear <- NULL
+  for(i in 1:nrow(x)){
+  bear[i] <- bearing(center, x[i, ])
+  }
+  return(bear)
+}
+```
+
+This reattaches the GEOID to act as a unique identifier for the degrees. I then renamed the columns to allow for a join back to my original Boston data.
+```
+deg1 <- data.frame(robbieBear(x, center), bos$GEOID)
+colnames(deg1)[1] <- "direction"
+colnames(deg1)[2] <- "GEOID"
+jdeg <- left_join(bos,
+                    deg1,
+                    by = "GEOID")
+```
+
+These ifelse() statements separated the degrees into cardinal directions.
+```
+jdeg1 <- jdeg %>%
+  mutate(cardinal = ifelse(direction >= -135 & direction < -45, "South",
+                           ifelse(direction == 0, "Center",
+                           ifelse(direction >= -45 & direction < 45 & direction != 0, "East",
+                                  ifelse(direction >= 45 & direction < 135, "North",
+                                         "West")))))
+```
+
+This created a seperate dataframe that was only the downtown datapoint.
+```
+jdeg2 <-jdeg1%>%
+  mutate(center = ifelse(NAME == "Census Tract 303, Suffolk County, Massachusetts",
+                         1,0))
+```
+
+These create the direction graphs by degrees and cardinal direction.
+```
+ggplot() +
+  geom_sf(data=jdeg1, aes(fill=cardinal), color="grey",lwd = .05)+
+  geom_sf(data=Cdt, aes(), lwd = .3) +
+  labs(title = " Directions from City Hall",
+       fill = "Cardinal Directions")
+
+ggplot() +
+  geom_sf(data=jdeg1, aes(fill=direction), color="grey",lwd = .05)+
+  geom_point(aes(cdt1[1],cdt1[2], color= "red")) +
+  labs(title = " Degrees off of City Hall",
+       fill = "Degrees",
+       color = "City Hall")
+```
+
 ## Results
 
+![deg](Degrees.png)
 ![dir](Dir.png)
+
+
