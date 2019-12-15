@@ -8,7 +8,7 @@ This product uses the Census Bureau Data API but is not endorsed or certified by
 
 For my final project I attempted to recreate the [QGIS Direction Model](lab1SQL.md) from the first two labs, except this time in RStudio. Where in the original labs i used model builder(including SQL code) and point-and-click functions in QGIS, this time I used exclusively R code. Something I am particularly proud of (and made my life significantly more difficult) was that I even downloaded the datafiles using R. I have used R before, so many of its basic functions are already familiar to me. Thus, this was mainly an exercise in acquiring data, its manipulation, and exploring new was to present data.
 
-I completed this lab in a cartesian plane due to issues converting any of my data or functions into a CRF. Because it is in a very small geographic area, however, I believe that the variance is minimal.
+I completed this lab in a cartesian plane due to issues converting any of my data or functions into a CRF. Because it is in a very small geographic area, however, I believe that the variance is minimal. The main reason for this is because having the data as a multipolygon was breaking the functions that allowed for conversion into different coordinate reference systems.
 
 To download my RStudio code, click [here](Final.R)
 
@@ -204,6 +204,10 @@ joined %>%
 ```
 ![distR](distR.png)
 
+### A brief result
+
+In the original lab, I used Massachusetts as my area of study. Because I switched from using counties to analyze a state to using tracts to analyze a city, my graphics look much different. The general trend is that the downtown of Boston is the most expensive, along with a select few other neighborhoods. There are very clearly more and less expensive areas, and it would be interesting to find the G* of the rents in Boston by tract. But heeding the advice from Professor Holler, that is a challenge for another day.
+
 ## Conclusion
 
 RStudio is an incredibly adaptable software, able to do everything from data manipulation to statistics to graphics to mapping. The ability to access the spatial analysis and basic cartography parts of that toolset can allow a geographer to easily do more with their data than just spatial analysis. The ease that RStudio allows users to transition between different types of analysis is impressive which in turn can lead to a more complete and thorough analysis of any problem.
@@ -221,7 +225,7 @@ While this was an interesting academic exercise in swapping software to complete
 
 ## Bibliography
 
-First of all, this work would not have gotten done without the help and support of Professor Holler and Professor Lyford.
+First of all, this work would not have gotten done without the help and support of Professor Holler and Professor Lyford. Additionally, many of the functions and experiences that I drew from were founded in my class notes from my data science course. I used them as a springboard for the ?help function and made use of RStudio's extensive internal documentation.
 
 There is a [cheetsheet](ggplot2-cheatsheet-2.1.pdf) published by RStudio that was instrumental to making this project work.
 
