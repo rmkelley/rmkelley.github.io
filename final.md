@@ -124,9 +124,23 @@ ggplot() +
        color = "City Hall")
 ```
 
+
+This creates a choropleth map of the gross median rent by census tract
+```
+ggplot() +
+  geom_sf(data=bos, aes(fill=cut_number(estimate,5)), color="grey",lwd = .05)+
+  geom_sf(data=Cdt, aes(), lwd = .3, color = "red")+
+  scale_fill_brewer(palette="GnBu")+
+  guides(fill=guide_legend(title="Gross Median Rent"))+
+  labs(title = "Boston's Gross Median Rent by Census Tract")+
+  theme(plot.title=element_text(hjust=0.5),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank())
+```
+
 ## Results
 
 ![deg](Degrees.png)
 ![dir](Dir.png)
-
+![rent](Rent.png)
 
