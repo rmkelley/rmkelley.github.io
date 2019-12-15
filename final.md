@@ -161,9 +161,42 @@ jdeg1 %>%
 ```
 ![polar](Polar.png)
 
-## Results
+This function finds the distance between the downtown tract and each other tract.
+```
+robbieDist <- function(x, center){
+  dist <- NULL
+  for(i in 1:nrow(x)){
+    dist[i] <- sqrt((center[1] - x[1][i, ])^2 + (center[2] - x[2][i, ])^2)
+  }
+  return(dist)
+}
+```
 
+This creates a dataframe with the distance and a unique identifyer.
+```
+dist1 <- data.frame(robbieDist(x, center), bos$GEOID)
+```
 
+This renames the columns for ease of digestion and joining, and multiplies the distance which was in degrees by 111,139 which is the conversion rate into meters. The last line of code joins the two dataframes.
+```
+colnames(dist1)[1] <- "distdeg"
+colnames(dist1)[2] <- "GEOID"
 
+dist1 <- dist1 %>%
+  mutate(meters = distdeg*111139)
+  
+joined <- left_join(jdist1,
+                  dist1,
+                  by = "GEOID")
+```
 
+This creates a distance plot that affirms the sucess of the distance function that I created.
+```
+ggplot() +
+  geom_sf(data=joined, aes(fill=meters), color="grey",lwd = .05)+
+  geom_sf(data=Cdt, aes(), lwd = .3, color = "red") +
+  labs(title = " Distance from City Hall",
+       fill = "Distance in Meters")
+```
+![dist](Dist.png
 
