@@ -229,6 +229,10 @@ First of all, this work would not have gotten done without the help and support 
 
 There is a [cheetsheet](ggplot2-cheatsheet-2.1.pdf) published by RStudio that was instrumental to making this project work.
 
+This is a [tidycensus support doc](tidycensus.pdf).
+
+This is a [map of census tracts in Boston](2010-Census-Neighborhoods-Map-by-Census-Tracts.pdf) that I refered to.
+
 Bureau, U. C. (n.d.). Terms of Service. Retrieved December 15, 2019, from The United States Census Bureau website: https://www.census.gov/data/developers/about/terms-of-service.html
 
 Centroid function | R Documentation. (n.d.). Retrieved December 15, 2019, from https://www.rdocumentation.org/packages/geosphere/versions/1.5-10/topics/centroid
