@@ -6,7 +6,9 @@ Here is a [link](index.md) back to the home page
 
 This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.
 
-For my final project I attemtped to recreate the [QGIS Direction Model](lab1SQL.md) from the first two labs, except this time in RStudio. Where in the original labs i used model builder(including SQL code) and point-and-click functions in QGIS, this time I used exclusivly R code. Something I am particularly proud of (and made my life significantly more difficult) was that I even downloaded the datafiles using R. I have used R before, so many of its basic functions are already familiar to me.
+For my final project I attempted to recreate the [QGIS Direction Model](lab1SQL.md) from the first two labs, except this time in RStudio. Where in the original labs i used model builder(including SQL code) and point-and-click functions in QGIS, this time I used exclusively R code. Something I am particularly proud of (and made my life significantly more difficult) was that I even downloaded the datafiles using R. I have used R before, so many of its basic functions are already familiar to me. Thus, this was mainly an exercise in acquiring data, its manipulation, and exploring new was to present data.
+
+I completed this lab in a cartesian plane due to issues converting any of my data or functions into a CRF. Because it is in a very small geographic area, however, I believe that the variance is minimal.
 
 To download my RStudio code, click [here](Final.R)
 
@@ -31,7 +33,7 @@ This provided the census tracts of Massachusetts with a selected variable.
 tarr <- get_acs(geography = "tract", variables = "B25064_001",
                 state = "MA", geometry = TRUE, key="3d89f005b11bd0cc562da8eea31dc3ce5011a707")
 ```
-The first line below selects just the boston tracts, and the second selects the tract where city hall is which will be treated as downtown for this exersize.
+The first line below selects just the Boston tracts, and the second selects the tract where city hall is which will be treated as downtown for this exercise.
 ```
 bos <- tarr[grep("Suffolk", tarr$NAME), ]
 dt <- bos[grep("Tract 303", bos$NAME), ]
@@ -42,14 +44,15 @@ This turns each multipolygon into a centroid.
 cent <- st_centroid(bos$geometry)
 Cdt <- st_centroid(dt$geometry)
 ```
-These extract the X,Y coordiantes for each centroid into lists.
+
+These extract the X,Y coordinates for each centroid into lists.
 ```
 cent1 <- st_coordinates(cent)
 
 cdt1 <- st_coordinates(Cdt)
 ```
 
-These create dataframes out of the coordinate lists.
+These create data frames out of the coordinate lists.
 ```
 x <- data.frame(lon = cent1[,"Y"],
                 lat = cent1[,"X"])
@@ -90,7 +93,7 @@ jdeg1 <- jdeg %>%
                                          "West")))))
 ```
 
-This created a seperate dataframe that was only the downtown datapoint.
+This created a separate data frame that was only the downtown datapoint.
 ```
 jdeg2 <-jdeg1%>%
   mutate(center = ifelse(NAME == "Census Tract 303, Suffolk County, Massachusetts",
@@ -112,7 +115,7 @@ ggplot() +
        fill = "Degrees",
        color = "City Hall")
 ```
-Both maps below have a rectangular aspect ration as opposed to square because geom_sf() only works with coord_sf() which does not have any function to fix the aspect ratio, and none of the other methods such as coord_fixed() work with geom_sf().
+Both maps below have a rectangular aspect ratio as opposed to square because geom_sf() only works with coord_sf() which does not have any function to fix the aspect ratio, and none of the other methods such as coord_fixed() work with geom_sf().
 
 ![deg](Degrees.png)
 ![dir](Dir.png)
@@ -161,12 +164,12 @@ robbieDist <- function(x, center){
 }
 ```
 
-This creates a dataframe with the distance and a unique identifyer.
+This creates a data frame with the distance and a unique identifier.
 ```
 dist1 <- data.frame(robbieDist(x, center), bos$GEOID)
 ```
 
-This renames the columns for ease of digestion and joining, and multiplies the distance which was in degrees by 111,139 which is the conversion rate into meters. The last line of code joins the two dataframes.
+This renames the columns for ease of digestion and joining and multiplies the distance which was in degrees by 111,139 which is the conversion rate into meters. The last line of code joins the two data frames.
 ```
 colnames(dist1)[1] <- "distdeg"
 colnames(dist1)[2] <- "GEOID"
@@ -179,7 +182,7 @@ joined <- left_join(jdist1,
                   by = "GEOID")
 ```
 
-This creates a distance plot that affirms the sucess of the distance function that I created.
+This creates a distance plot that affirms the success of the distance function that I created.
 ```
 ggplot() +
   geom_sf(data=joined, aes(fill=meters), color="grey",lwd = .05)+
@@ -200,6 +203,21 @@ joined %>%
        y = "Gross Median Rent (dollars)")
 ```
 ![distR](distR.png)
+
+## Conclusion
+
+RStudio is an incredibly adaptable software, able to do everything from data manipulation to statistics to graphics to mapping. The ability to access the spatial analysis and basic cartography parts of that toolset can allow a geographer to easily do more with their data than just spatial analysis. The ease that RStudio allows users to transition between different types of analysis is impressive which in turn can lead to a more complete and thorough analysis of any problem.
+
+RStudio has a robust online user community, making it relatively accessible for a software. Not only that, its in-program documentation is very thorough, meaning that if you know what you are looking for it is generally possible to figure it out yourself. That said, it still is an open source software. While that comes with many benefits, such as amazing customizability, it also often has glitches that make little to no sense. For example:
+
+When creating my center points from the multipolygons, I received the error below.
+```
+In st_centroid.sfc(dt$geometry) :
+  st_centroid does not give correct centroids for longitude/latitude data
+```
+As I went through the rest of my workflow, however, the results made sense and RStudio was consistently giving me warnings or randomly refusing to execute commands that were working the moment before with no changes (I repeatedly checked, this at least was not user error). Thus, I am inclined to believe that this was yet another incorrect error.
+
+While this was an interesting academic exercise in swapping software to complete the same general workflow, it goes to show what the possibilities of an expansive open source family of programs could do with effective transitions between data types, approaches to problems, and more. 
 
 ## Bibliography
 
