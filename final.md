@@ -185,7 +185,7 @@ joined %>%
        x = "Distance in Meters",
        y = "Gross Median Rent (dollars)")
 ```
-![distR](DistR.png)
+![distR](distR.png)
 
 
 
