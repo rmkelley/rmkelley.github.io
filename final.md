@@ -142,6 +142,12 @@ ggplot() +
 ```
 ![rent](Rent.png)
 
+This is an alternative way to make a choropleth map of the rent.
+```
+plot(jdeg1["estimate"],key.width = .3, key.length=.5, main = "Median Rent by Tract")
+```
+![rent2](Rent2.png)
+
 This creates a polar plot of rent by direction. As mentioned by Professor Holler in class and Professor Lyford in office hours, do not do polar plots if you have any other option. They are simply too tricky, require too much minute detail, and simply fail to work too often to be worth the trouble. As shown by the graph below.
 ```
 jdeg1 %>%
