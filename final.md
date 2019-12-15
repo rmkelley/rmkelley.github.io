@@ -138,9 +138,25 @@ ggplot() +
         axis.title.y=element_blank())
 ```
 
+This creates a polar plot of rent by direction. As mentioned by Professor Holler in class and Professor Lyford in office hours, do not do polar plots if you have any other option. They are simply too tricky, require too much minute detail, and simply do nto work too often to be worth the trouble. As shown by the graph below.
+
+```
+jdeg1 %>%
+  ggplot() + 
+  geom_point(aes(estimate, direction))+
+  coord_polar("y", start= 180)+
+  labs(title = "Rent by direction",
+       subtitle = "The two labels on the side correspond with the first and second rings.",
+       x = NULL,
+       y = "Median Rent")
+```
+
 ## Results
+
+Both maps below have a rectangular aspect ration as opposed to square because geom_sf() only works with coord_sf() which does not have any function to fix the aspect ratio, and none of the other methods such as coord_fixed() work with geom_sf().
 
 ![deg](Degrees.png)
 ![dir](Dir.png)
 ![rent](Rent.png)
+![polar](Polar.png)
 
