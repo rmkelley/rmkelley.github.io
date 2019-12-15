@@ -123,7 +123,10 @@ ggplot() +
        fill = "Degrees",
        color = "City Hall")
 ```
+Both maps below have a rectangular aspect ration as opposed to square because geom_sf() only works with coord_sf() which does not have any function to fix the aspect ratio, and none of the other methods such as coord_fixed() work with geom_sf().
 
+![deg](Degrees.png)
+![dir](Dir.png)
 
 This creates a choropleth map of the gross median rent by census tract
 ```
@@ -137,9 +140,9 @@ ggplot() +
         axis.title.x=element_blank(),
         axis.title.y=element_blank())
 ```
+![rent](Rent.png)
 
-This creates a polar plot of rent by direction. As mentioned by Professor Holler in class and Professor Lyford in office hours, do not do polar plots if you have any other option. They are simply too tricky, require too much minute detail, and simply do nto work too often to be worth the trouble. As shown by the graph below.
-
+This creates a polar plot of rent by direction. As mentioned by Professor Holler in class and Professor Lyford in office hours, do not do polar plots if you have any other option. They are simply too tricky, require too much minute detail, and simply fail to work too often to be worth the trouble. As shown by the graph below.
 ```
 jdeg1 %>%
   ggplot() + 
@@ -150,13 +153,11 @@ jdeg1 %>%
        x = NULL,
        y = "Median Rent")
 ```
+![polar](Polar.png)
 
 ## Results
 
-Both maps below have a rectangular aspect ration as opposed to square because geom_sf() only works with coord_sf() which does not have any function to fix the aspect ratio, and none of the other methods such as coord_fixed() work with geom_sf().
 
-![deg](Degrees.png)
-![dir](Dir.png)
-![rent](Rent.png)
-![polar](Polar.png)
+
+
 
